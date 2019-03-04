@@ -160,6 +160,16 @@
             Динамическое добавление данных
             </summary>
         </member>
+        <member name="M:AI.Charts.Controls.ChartControl.AddBar(AI.Vector,AI.Vector,System.String,System.Drawing.Color)">
+            <summary>
+            Создание графика с данными
+            </summary>
+        </member>
+        <member name="M:AI.Charts.Controls.ChartControl.AddBar(System.String,System.Drawing.Color,System.Int32)">
+            <summary>
+            Создание графика без данных
+            </summary>
+        </member>
         <member name="M:AI.Charts.Controls.ChartControl.ChartImg">
             <summary>
              Отрисовка графика
@@ -203,7 +213,7 @@
             Description of DataMethods.
             </summary>
         </member>
-        <member name="M:AI.Charts.Controls.DataMethods.ReducData1080(AI.Vector,AI.Vector)">
+        <member name="M:AI.Charts.Controls.DataMethods.ReducData3000(AI.Vector,AI.Vector)">
             <summary>
             Прореживание данных, чтобы на графике не было большого числа точек
             </summary>
@@ -962,6 +972,14 @@
             Изображение в полутоновую матрицу
             </summary>
             <param name="Bmp">Изображение</param>
+        </member>
+        <member name="M:AI.ComputerVision.ImgConverter.BmpToHMatr(System.Drawing.Bitmap)">
+            <summary>
+            Преобразование картинки в матрицу H компонент
+            H принадлежит интервалу [0,1]
+            </summary>
+            <param name="Bmp">Картинка</param>
+            <returns></returns>
         </member>
         <member name="M:AI.ComputerVision.ImgConverter.Visualiz(AI.Matrix)">
             <summary>
@@ -4415,6 +4433,13 @@
             Description of SigData.
             </summary>
         </member>
+        <member name="M:AI.Signals.DrawSignalControl.SigData.BmpToVector(System.Drawing.Bitmap)">
+            <summary>
+            Преобразование изображения сигнала в его дискретные отсчеты
+            </summary>
+            <param name="bmp">Изображение</param>
+            <returns>Возвращает пару векторов 1-й отсчеты времени, 2-й сигнала</returns>
+        </member>
         <member name="T:AI.Signals.FastHilbert">
             <summary>
             Description of Hilbert.
@@ -5207,106 +5232,153 @@
             <param name="B"></param>
             <returns></returns>
         </member>
-        <member name="T:AI.Statistic">
+        <member name="T:AI.Statistics.Histogramm">
+            <summary>
+            Структура гистограммы
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.X">
+            <summary>
+            Значения столбцов
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.Y">
+            <summary>
+            Высоты столбцов
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.Name">
+            <summary>
+            Название гистограммы
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.Info">
+            <summary>
+            Описание гистограммы
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.XLable">
+            <summary>
+            Название оси "Х" гистограммы
+            </summary>
+        </member>
+        <member name="P:AI.Statistics.Histogramm.YLables">
+            <summary>
+            Название оси "У" гистограммы
+            </summary>
+        </member>
+        <member name="M:AI.Statistics.Histogramm.Save(System.String)">
+            <summary>
+            Сохранение гистограммы
+            </summary>
+            <param name="path">Путь до файла</param>
+        </member>
+        <member name="M:AI.Statistics.Histogramm.Open(System.String)">
+            <summary>
+            Загрузка гистограммы
+            </summary>
+            <param name="path">Путь до файла</param>		
+        </member>
+        <member name="T:AI.Statistics.Statistic">
             <summary>
             Класс содержит методы для статистического анализа.
             А так же генераторы псевдо случайных чисел
             </summary>
         </member>
-        <member name="P:AI.Statistic.SCO">
+        <member name="P:AI.Statistics.Statistic.SCO">
             <summary>
             Среднеквадратичное отклонение
             </summary>
         </member>
-        <member name="P:AI.Statistic.MinValue">
+        <member name="P:AI.Statistics.Statistic.MinValue">
             <summary>
             Минимальное значение в массиве
             </summary>
         </member>
-        <member name="P:AI.Statistic.MaxValue">
+        <member name="P:AI.Statistics.Statistic.MaxValue">
             <summary>
             Максимальное значение в массиве
             </summary>
         </member>
-        <member name="P:AI.Statistic.Dispersia">
+        <member name="P:AI.Statistics.Statistic.Dispersia">
             <summary>
             Дисперсия
             </summary>
         </member>
-        <member name="P:AI.Statistic.Expected">
+        <member name="P:AI.Statistics.Statistic.Expected">
             <summary>
             Математическое ожидание
             </summary>
         </member>
-        <member name="M:AI.Statistic.#ctor(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.#ctor(AI.Vector)">
             <summary>
             Создает объек класса Statistic, принимает вектор входных значений случайной переменной
             </summary>
             <param name="A">Вектор значений</param>
         </member>
-        <member name="M:AI.Statistic.ExpectedValue">
+        <member name="M:AI.Statistics.Statistic.ExpectedValue">
             <summary>
             Математическое ожидание
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.Dispers">
+        <member name="M:AI.Statistics.Statistic.Dispers">
             <summary>
             Дисперсия
             </summary>
         </member>
-        <member name="M:AI.Statistic.Std">
+        <member name="M:AI.Statistics.Statistic.Std">
             <summary>
             СКО
             </summary>
         </member>
-        <member name="M:AI.Statistic.Dispers(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.Dispers(AI.Vector)">
             <summary>
             Дисперсия вектора
             </summary>
             <param name="vector">Входной вектор</param>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.Std(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.Std(AI.Vector)">
             <summary>
             Среднеквадратичное отклонение
             </summary>
             <param name="vector">Входной вектор</param>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.CharacteristicFunction">
+        <member name="M:AI.Statistics.Statistic.CharacteristicFunction">
             <summary>
             Характеристическая функция
             </summary>
             <returns>Возвращает вектор отсчетов</returns>
         </member>
-        <member name="M:AI.Statistic.CharacteristicFunc">
+        <member name="M:AI.Statistics.Statistic.CharacteristicFunc">
             <summary>
             Характеристическая функция
             </summary>
             <returns>Возвращает вектор отсчетов</returns>
         </member>
-        <member name="M:AI.Statistic.rand(System.Int32)">
+        <member name="M:AI.Statistics.Statistic.rand(System.Int32)">
             <summary>
             Генератор случайных чисел с равномерным распределением
             </summary>
             <param name="n">Длинна вектора</param>
             <returns>Возвращает вектор случайных чисел</returns>
         </member>
-        <member name="M:AI.Statistic.Gauss(System.Random)">
+        <member name="M:AI.Statistics.Statistic.Gauss(System.Random)">
             <summary>
             Гауссовское распределение
             </summary>
             <returns>Возвращает норм. распред величину СКО = 1, M = 0</returns>
         </member>
-        <member name="M:AI.Statistic.randNorm(System.Int32)">
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32)">
             <summary>
             Генератор случайных чисел с нормальным распределением
             </summary>
             <param name="n">Длинна вектора</param>
             <returns>Возвращает вектор случайных чисел</returns>
         </member>
-        <member name="M:AI.Statistic.randNorm(System.Int32,System.Random)">
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32,System.Random)">
             <summary>
             Генератор случайных чисел с нормальным распределением
             </summary>
@@ -5314,7 +5386,7 @@
             <param name="rnd">Генератор случайных чисел</param>
             <returns>Возвращает вектор случайных чисел</returns>
         </member>
-        <member name="M:AI.Statistic.rand(System.Int32,System.Int32)">
+        <member name="M:AI.Statistics.Statistic.rand(System.Int32,System.Int32)">
             <summary>
             Cоздает матрицу с равномерно распределенными значениями
             размерности m на n
@@ -5322,32 +5394,32 @@
             <param name="m">Количество строк</param>
             <param name="n">Количество столбцов</param>
         </member>
-        <member name="M:AI.Statistic.MaximalValue(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.MaximalValue(AI.Vector)">
             <summary>
             Максимальное значение вектора
             </summary>
             <param name="vect">Вектор</param>
         </member>
-        <member name="M:AI.Statistic.MinimalValue(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.MinimalValue(AI.Vector)">
             <summary>
             Минимальное значение вектора
             </summary>
             <param name="vect">Вектор</param>
         </member>
-        <member name="M:AI.Statistic.rand(System.Int16)">
+        <member name="M:AI.Statistics.Statistic.rand(System.Int16)">
             <summary>
             Cоздает матрицу с равномерно распределенными значениями
             размерности n на n
             </summary>
         </member>
-        <member name="M:AI.Statistic.ExpectedValue(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.ExpectedValue(AI.Vector)">
             <summary>
             Математическое ожидание
             </summary>
             <param name="vector">вектор, содержащий отсчеты случайной величины</param>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.randNorm(System.Int32,System.Int32)">
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32,System.Int32)">
             <summary>
             Cоздает матрицу с нормально распределенными значениями
             размерности m на n
@@ -5355,7 +5427,7 @@
             <param name="m">Количество строк</param>
             <param name="n">Количество столбцов</param>
         </member>
-        <member name="M:AI.Statistic.randNorm(System.Int32,System.Int32,System.Random)">
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32,System.Int32,System.Random)">
             <summary>
             Cоздает матрицу с нормально распределенными значениями
             размерности m на n
@@ -5364,52 +5436,52 @@
             <param name="n">Количество столбцов</param>
             <param name="rnd">Генератор случ чисел</param>
         </member>
-        <member name="M:AI.Statistic.randNorm(System.Int16)">
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int16)">
             <summary>
             Cоздает матрицу с нормально распределенными значениями
             размерности n на n
             </summary>
         </member>
-        <member name="M:AI.Statistic.randNorm">
+        <member name="M:AI.Statistics.Statistic.randNorm">
             <summary>
             Генератор случайных чисел с нормальным распределением
             </summary>
             <returns>Возвращает случайные числа</returns>
         </member>
-        <member name="M:AI.Statistic.Histogramm(System.Int32)">
+        <member name="M:AI.Statistics.Statistic.Histogramm(System.Int32)">
             <summary>
             Строит гистограмму
             </summary>
             <param name="nRazr">Количество разрядов гистограммы</param>
             <returns>возращает вектор длинной nRazr, содержащий отсчеты для построения гистограммы</returns>
         </member>
-        <member name="M:AI.Statistic.InitialMoment(System.Int32)">
+        <member name="M:AI.Statistics.Statistic.InitialMoment(System.Int32)">
             <summary>
             Начальный момент
             </summary>
             <param name="n">порядок момента 1,2,3...</param>
             <returns>Возвращает число типа Double</returns>
         </member>
-        <member name="M:AI.Statistic.CentrMoment(System.Int32)">
+        <member name="M:AI.Statistics.Statistic.CentrMoment(System.Int32)">
             <summary>
             Центральный момент
             </summary>
             <param name="n">порядок момента 1,2,3...</param>
             <returns>Возвращает число типа Double</returns>
         </member>
-        <member name="M:AI.Statistic.Asymmetry">
+        <member name="M:AI.Statistics.Statistic.Asymmetry">
             <summary>
             Асимметрия распределения
             </summary>
             <returns>Возвращает коэффициент асимметрии, число типа Double</returns>
         </member>
-        <member name="M:AI.Statistic.Excess">
+        <member name="M:AI.Statistics.Statistic.Excess">
             <summary>
             Эксцесс, "крутость" распределения
             </summary>
             <returns>Возвращает коэффициент эксцесса, число типа Double</returns>
         </member>
-        <member name="M:AI.Statistic.Cov(AI.Vector,AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.Cov(AI.Vector,AI.Vector)">
             <summary>
             Ковариация(корреляционный момент, линейная зависимость) двух векторов,
             длины векторов должны быть равны
@@ -5418,7 +5490,7 @@
             <param name="Y">второй вектор</param>
             <returns>Возвращает число типа Double</returns>
         </member>
-        <member name="M:AI.Statistic.CorrelationCoefficient(AI.Vector,AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.CorrelationCoefficient(AI.Vector,AI.Vector)">
             <summary>
             Коэфициент корреляции
             </summary>
@@ -5426,50 +5498,50 @@
             <param name="Y">Вектор Y</param>
             <returns>Возвращает коэф. кор.</returns>
         </member>
-        <member name="M:AI.Statistic.MeanVector(AI.Vector[])">
+        <member name="M:AI.Statistics.Statistic.MeanVector(AI.Vector[])">
             <summary>
             Усреднение по выборке(ансамблю)
             </summary>
             <param name="vectors">Выборка</param>
             <returns>Средний вектор</returns>
         </member>
-        <member name="M:AI.Statistic.MeanGeom(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.MeanGeom(AI.Vector)">
             <summary>
             Среднее геометрическое 
             </summary>
         </member>
-        <member name="M:AI.Statistic.MeanGarmonic(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.MeanGarmonic(AI.Vector)">
             <summary>
             Среднее гармоническое
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.RMS(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.RMS(AI.Vector)">
             <summary>
             Среднeквадратичное значение
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.EnsembleDispersion(AI.Vector[])">
+        <member name="M:AI.Statistics.Statistic.EnsembleDispersion(AI.Vector[])">
             <summary>
             Дисперсия по ансамлю
             </summary>
             <param name="ensemble">Ансамбль векторов</param>
         </member>
-        <member name="M:AI.Statistic.MaxEns(AI.Vector[])">
+        <member name="M:AI.Statistics.Statistic.MaxEns(AI.Vector[])">
             <summary>
             Максимум по ансамлю
             </summary>
             <param name="ensemble">Ансамбль векторов</param>
         </member>
-        <member name="M:AI.Statistic.MaxEnergeVector(AI.Vector[])">
+        <member name="M:AI.Statistics.Statistic.MaxEnergeVector(AI.Vector[])">
             <summary>
             Возвращает вектор с максимальной энергией
             </summary>
             <param name="ens">Ансамбль векторов</param>
             <returns>Вектор с максимальной энергией</returns>
         </member>
-        <member name="M:AI.Statistic.SimpleMeanFreq(AI.Vector,System.Double)">
+        <member name="M:AI.Statistics.Statistic.SimpleMeanFreq(AI.Vector,System.Double)">
             <summary>
             Средняя частота (не нормированная, зависит от кол-ва точек)
             </summary>
@@ -5477,7 +5549,7 @@
             <param name="oldPart">Сглаживание</param>
             <returns></returns>
         </member>
-        <member name="M:AI.Statistic.MeanFreq(AI.Vector,System.Double,System.Double)">
+        <member name="M:AI.Statistics.Statistic.MeanFreq(AI.Vector,System.Double,System.Double)">
             <summary>
             Средняя частота сигнала
             </summary>
@@ -5486,59 +5558,18 @@
             <param name="oldPart">Коэффициент сглаживания</param>
             <returns>Средняя частота [Гц]</returns>
         </member>
-        <member name="M:AI.Statistic.DivFreq(AI.Vector)">
+        <member name="M:AI.Statistics.Statistic.DivFreq(AI.Vector)">
             <summary>
             Изменение частоты
             </summary>
             <param name="signal">Сигнал</param>
             <returns>Дивиация средней частоты</returns>
         </member>
-        <member name="T:AI.Histogramma">
+        <member name="M:AI.Statistics.Statistic.MeanStep(AI.Vector)">
             <summary>
-            Структура гистограммы
+            Средний шаг, насколько в среднем отличается x[i] от x[i+1]
             </summary>
-        </member>
-        <member name="P:AI.Histogramma.X">
-            <summary>
-            Значения столбцов
-            </summary>
-        </member>
-        <member name="P:AI.Histogramma.Y">
-            <summary>
-            Высоты столбцов
-            </summary>
-        </member>
-        <member name="P:AI.Histogramma.Name">
-            <summary>
-            Название гистограммы
-            </summary>
-        </member>
-        <member name="P:AI.Histogramma.Info">
-            <summary>
-            Описание гистограммы
-            </summary>
-        </member>
-        <member name="P:AI.Histogramma.XLable">
-            <summary>
-            Название оси "Х" гистограммы
-            </summary>
-        </member>
-        <member name="P:AI.Histogramma.YLables">
-            <summary>
-            Название оси "У" гистограммы
-            </summary>
-        </member>
-        <member name="M:AI.Histogramma.Save(System.String)">
-            <summary>
-            Сохранение гистограммы
-            </summary>
-            <param name="path">Путь до файла</param>
-        </member>
-        <member name="M:AI.Histogramma.Open(System.String)">
-            <summary>
-            Загрузка гистограммы
-            </summary>
-            <param name="path">Путь до файла</param>		
+            <param name="vector">Последовательность</param>
         </member>
         <member name="T:AI.Tensor">
             <summary>
@@ -5662,6 +5693,12 @@
             <summary>
             Класс реализующий вектора и операции над ними
             </summary>
+        </member>
+        <member name="M:AI.Vector.GetEnumerator">
+            <summary>
+            Enumerator
+            </summary>
+            <returns></returns>
         </member>
         <member name="P:AI.Vector.DataInVector">
             <summary>
