@@ -145,7 +145,7 @@
             Графики
             </summary>
         </member>
-        <member name="M:AI.Charts.Controls.ChartControl.AddPlot(AI.Vector,AI.Vector,System.String,System.Drawing.Color,System.Int32,System.Boolean)">
+        <member name="M:AI.Charts.Controls.ChartControl.AddPlot(AI.Vector,AI.Vector,System.String,System.Drawing.Color,System.Int32,System.Boolean,System.Int32)">
             <summary>
             Создание графика с данными
             </summary>
@@ -162,12 +162,7 @@
         </member>
         <member name="M:AI.Charts.Controls.ChartControl.AddBar(AI.Vector,AI.Vector,System.String,System.Drawing.Color)">
             <summary>
-            Создание графика с данными
-            </summary>
-        </member>
-        <member name="M:AI.Charts.Controls.ChartControl.AddBar(System.String,System.Drawing.Color,System.Int32)">
-            <summary>
-            Создание графика без данных
+            Создание гистограммы с данными
             </summary>
         </member>
         <member name="M:AI.Charts.Controls.ChartControl.ChartImg">
@@ -213,12 +208,13 @@
             Description of DataMethods.
             </summary>
         </member>
-        <member name="M:AI.Charts.Controls.DataMethods.ReducData3000(AI.Vector,AI.Vector)">
+        <member name="M:AI.Charts.Controls.DataMethods.ReducData3000(AI.Vector,AI.Vector,System.Int32)">
             <summary>
             Прореживание данных, чтобы на графике не было большого числа точек
             </summary>
             <param name="x"></param>
             <param name="y"></param>
+            <param name="n"></param>
             <returns></returns>
         </member>
         <member name="M:AI.Charts.Controls.DataMethods.ImageFromChart(System.Windows.Forms.DataVisualization.Charting.Chart)">
@@ -1931,21 +1927,6 @@
             </summary>
             <param name="inp">Вход</param>
         </member>
-        <member name="M:AI.Furie.Rotate(System.Int32,System.Int32)">
-            <summary>
-            Вычисление поворачивающего модуля e^(-i*2*PI*k/N)
-            </summary>
-            <param name="k"></param>
-            <param name="N"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.Furie.fft(System.Numerics.Complex[])">
-            <summary>
-            Возвращает спектр сигнала
-            </summary>
-            <param name="x">Массив значений сигнала. Количество значений должно быть степенью 2</param>
-            <returns>Массив со значениями спектра сигнала</returns>
-        </member>
         <member name="M:AI.Furie.ifft(System.Numerics.Complex[])">
             <summary>
             Возвращает спектр сигнала
@@ -2442,7 +2423,7 @@
             Центр гиперсферы
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClass.StrName">
+        <member name="P:AI.ML.Classifire.StructClass.NumCl">
             <summary>
             Имя класса
             </summary>
@@ -2494,21 +2475,6 @@
             </summary>
             <param name="classifikator"> Коллекция классов</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.GeneratVector(System.Drawing.Bitmap,System.Boolean)">
-            <summary>
-            Преобразование картинки в вектор
-            </summary>
-            <param name="Bmp">Картинка</param>
-            <param name="flag">Реаальный ли размер использовать?</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Classifire.Classifier.GeneratBmp(AI.Vector)">
-            <summary>
-            Преобразование вектора в картинку
-            </summary>
-            <param name="vect">Вектор</param>
-            <returns></returns>
-        </member>
         <member name="M:AI.ML.Classifire.Classifier.GetCentr(AI.Vector[])">
             <summary>
             Поиск центра класса
@@ -2516,36 +2482,36 @@
             <param name="vectors">Точки класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.Teach1(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.Classifier.Teach1(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="nameClass">Индекс класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClasses(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.Classifier.AddClasses(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">индекс класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClass1(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.Classifier.AddClass1(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">Номер класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClass(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.Classifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
         <member name="M:AI.ML.Classifire.Classifier.Save(System.String)">
@@ -2560,11 +2526,25 @@
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifire.Classifier.Recognize(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
+        </member>
+        <member name="M:AI.ML.Classifire.Classifier.AddClass(AI.Vector,System.Int32)">
+            <summary>
+            Добавление класса
+            </summary>
+            <param name="tData">Центральный вектор</param>
+            <param name="num">Индекс класса</param>
+        </member>
+        <member name="M:AI.ML.Classifire.Classifier.RecognizeVector(AI.Vector)">
+            <summary>
+            Возращает вектор, его длинна - число классов, на номере нужного класса стоит 1
+            </summary>
+            <param name="inp">Вектор входа</param>
+            <returns></returns>
         </member>
         <member name="T:AI.ML.Classifire.StructClassCorr">
             <summary>
@@ -2588,7 +2568,7 @@
         </member>
         <member name="P:AI.ML.Classifire.StructClassCorr.StrName">
             <summary>
-            Имя класса
+            Индекс класса
             </summary>
         </member>
         <member name="P:AI.ML.Classifire.StructClassCorr.CentGiperSfer">
@@ -2660,36 +2640,29 @@
             <param name="vects">Вектора</param>
             <returns>Вектор меток</returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Teach1(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.Teach1(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClasses(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClasses(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass1(AI.Vector[],System.String)">
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:AI.ML.Classifire.CorrelationClassifier.AddClass1(AI.Vector[],System.Int32)" -->
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass(AI.Vector[],System.String)">
-            <summary>
-            Добавление класса в классификатор
-            </summary>
-            <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="numClass">Имя класса</param>
         </member>
         <member name="M:AI.ML.Classifire.CorrelationClassifier.Save(System.String)">
             <summary>
@@ -2703,13 +2676,27 @@
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVectorStruct(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVectorStruct(AI.Vector)">
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass(AI.Vector,System.Int32)">
+            <summary>
+            Добавление класса
+            </summary>
+            <param name="tData">Центральный вектор</param>
+            <param name="num">Индекс класса</param>
+        </member>
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.Recognize(AI.Vector)">
+            <summary>
+            Распознавание вектора
+            </summary>
+            <param name="inp">Вход</param>
+            <returns>Индекс класса</returns>
+        </member>
+        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVector(AI.Vector)">
             <summary>
             Распознавание
             </summary>
@@ -2720,12 +2707,19 @@
             Интерфейс для работы классификаторов
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.AddClass(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.IClassifire.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса
             </summary>
             <param name="tDataset">Выборка</param>
-            <param name="nameClass">Имя класса</param>
+            <param name="nameClass">Номер класса</param>
+        </member>
+        <member name="M:AI.ML.Classifire.IClassifire.AddClass(AI.Vector,System.Int32)">
+            <summary>
+            Добавление класса
+            </summary>
+            <param name="data">"Вектор</param>
+            <param name="nameClass">Номер класса</param>
         </member>
         <member name="M:AI.ML.Classifire.IClassifire.Save(System.String)">
             <summary>
@@ -2738,6 +2732,12 @@
             Загрузка классификатора
             </summary>
             <param name="path">Путь</param>
+        </member>
+        <member name="M:AI.ML.Classifire.IClassifire.Recognize(AI.Vector)">
+            <summary>
+            Распознавание
+            </summary>
+            <param name="inp">Вектор который надо распознать</param>
         </member>
         <member name="M:AI.ML.Classifire.IClassifire.RecognizeVector(AI.Vector)">
             <summary>
@@ -2791,9 +2791,9 @@
             Вероятность
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SModel.NameClass">
+        <member name="P:AI.ML.Classifire.SModel.NumClass">
             <summary>
-            Имя класса
+            Номер
             </summary>
         </member>
         <member name="P:AI.ML.Classifire.SModel.Weights">
@@ -2882,7 +2882,7 @@
             <param name="inp">Вектор входа</param>
             <returns>Максимально похожая модель</returns>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddModel(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddModel(AI.Vector[],System.Int32)">
             <summary>
             Добавление модели
             </summary>
@@ -2911,12 +2911,12 @@
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddClass(AI.Vector[],System.String)">
+        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса\модели
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifire.SimpleFLClassifier.Recognize(AI.Vector)">
             <summary>
             Распознавание вектора
             </summary>
@@ -3494,24 +3494,24 @@
             Генерация матрицы(нормированной)
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.MenegerNNW">
+        <member name="T:AI.ML.NeuralNetwork.MenegerNNW">
             <summary>
             Description of MenegerNNW.
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.MenegerNNW._net">
+        <member name="F:AI.ML.NeuralNetwork.MenegerNNW._net">
             <summary>
             Нейросеть
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.#ctor(AI.ML.NeuronNetwork.Net,AI.ML.Datasets.VectorIntDataset)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.#ctor(AI.ML.NeuralNetwork.Net,AI.ML.Datasets.VectorIntDataset)">
             <summary>
             Нейросетевой менеджер
             </summary>
             <param name="net">Нейросеть</param>
             <param name="vid">Датасет</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.GetNet(System.Int32,System.Int32,System.Int32,System.Double)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.GetNet(System.Int32,System.Int32,System.Int32,System.Double)">
             <summary>
             Создание нейронной сети
             </summary>
@@ -3521,7 +3521,7 @@
             <param name="learningRate">Скорость обучения</param>
             <returns>Нейросеть</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.GetNet(System.Int32,System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.GetNet(System.Int32,System.Int32,System.Int32)">
             <summary>
             Создание нейронной сети
             </summary>
@@ -3530,94 +3530,94 @@
             <param name="hDim">Кол-во нейронов на скрытом слое</param>
             <returns>Нейросеть</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.Train(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.Train(System.Int32)">
             <summary>
             Обучение
             </summary>
             <param name="epoch">количество эпох</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.Test(AI.ML.Datasets.VectorIntDataset)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.Test(AI.ML.Datasets.VectorIntDataset)">
             <summary>
             Тестирование
             </summary>
             <param name="vidTest">Датасет</param>
             <returns>Вероятность верного ответа</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.TestStr(AI.ML.Datasets.VectorIntDataset,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.TestStr(AI.ML.Datasets.VectorIntDataset,System.Int32)">
             <summary>
             Тестирование
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.Output(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.Output(AI.Vector)">
             <summary>
             Выход сети
             </summary>
             <param name="inp">Вход</param>
             <returns>Метка класса</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.MenegerNNW.GetClass(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.MenegerNNW.GetClass(AI.Vector)">
             <summary>
             Получение метки класса в результате работы нейронки
             </summary>
             <param name="sig">Сигнал</param>
             <returns>Метка класса</returns>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.Net">
+        <member name="T:AI.ML.NeuralNetwork.Net">
             <summary>
             Нейронная сеть
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.Net._layers">
+        <member name="F:AI.ML.NeuralNetwork.Net._layers">
             <summary>
             Список слоев НС
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.Net.LerningRate">
+        <member name="P:AI.ML.NeuralNetwork.Net.LerningRate">
             <summary>
             Скорость обучения (исправить)
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.Net.Moment">
+        <member name="P:AI.ML.NeuralNetwork.Net.Moment">
             <summary>
             Инерционность обучения
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.Net.#ctor">
             <summary>
             Создание сети
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.#ctor(System.Random)">
+        <member name="M:AI.ML.NeuralNetwork.Net.#ctor(System.Random)">
             <summary>
             Создание сети
             </summary>
             <param name="rnd">Датчик случ. чисел</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.#ctor(System.String)">
+        <member name="M:AI.ML.NeuralNetwork.Net.#ctor(System.String)">
             <summary>
             Создание сети
             </summary>
             <param name="path">Путь до сохраненной НС</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.Add(AI.ML.NeuronNetwork.ILayer)">
+        <member name="M:AI.ML.NeuralNetwork.Net.Add(AI.ML.NeuralNetwork.ILayer)">
             <summary>
             Добавление слоя
             </summary>
             <param name="layer">Слой</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.Output(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.Net.Output(AI.Vector)">
             <summary>
             Выход сети
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.OutputClass(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.Net.OutputClass(AI.Vector)">
             <summary>
             Выход сети (Класс)
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.TrainClassifier(AI.Vector,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Net.TrainClassifier(AI.Vector,System.Int32)">
             <summary>
             Обучение классификатора
             </summary>
@@ -3625,7 +3625,7 @@
             <param name="outp">Метка класса</param>
             <returns>Ошибка на примере</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.Train(AI.Vector,AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.Net.Train(AI.Vector,AI.Vector)">
             <summary>
             Обучение сети
             </summary>
@@ -3633,106 +3633,106 @@
             <param name="output">Вектор выхода</param>
             <returns>Ошибка на примере</returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.Save(System.String)">
+        <member name="M:AI.ML.NeuralNetwork.Net.Save(System.String)">
             <summary>
             Сохранение нейронной сети
             </summary>
             <param name="path">Путь до файла</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Net.Open(System.String)">
+        <member name="M:AI.ML.NeuralNetwork.Net.Open(System.String)">
             <summary>
             Загрузка матрицы
             </summary>
             <param name="path">Путь до файла</param>		
         </member>
-        <member name="T:AI.ML.NeuronNetwork.FullBipolyareSigmoid">
+        <member name="T:AI.ML.NeuralNetwork.FullBipolyareSigmoid">
             <summary>
             Гиперболический тангенс
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullBipolyareSigmoid.#ctor(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.FullBipolyareSigmoid.#ctor(System.Int32,System.Int32)">
             <summary>
             Гиперболический тангенс
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullBipolyareSigmoid.#ctor(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.FullBipolyareSigmoid.#ctor(System.Int32)">
             <summary>
             Гиперболический тангенс
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullBipolyareSigmoid.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.FullBipolyareSigmoid.FActivation(AI.Vector)">
             <summary>
             Ф-я активации
             </summary>
             <param name="inp">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullBipolyareSigmoid.DfDy">
+        <member name="M:AI.ML.NeuralNetwork.FullBipolyareSigmoid.DfDy">
             <summary>
             Производная ф-ии активации
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.CapsuleLinearLayer">
+        <member name="T:AI.ML.NeuralNetwork.CapsuleLinearLayer">
             <summary>
             Description of CasuleLayer.
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.CapsuleLinearLayer._capsules">
+        <member name="F:AI.ML.NeuralNetwork.CapsuleLinearLayer._capsules">
             <summary>
             Массив капсул
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.CapsuleLinearLayer.norms">
+        <member name="F:AI.ML.NeuralNetwork.CapsuleLinearLayer.norms">
             <summary>
             Массив норм, для каждой капсулы своя
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleLinearLayer.#ctor(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleLinearLayer.#ctor(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Капсульный линейный слой
             </summary>
             <param name="capsules">Капсулы</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleLinearLayer.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleLinearLayer.#ctor">
             <summary>
             Капсульный линейный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleLinearLayer.Init(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleLinearLayer.Init(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Инициализация
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleLinearLayer.Train">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleLinearLayer.Train">
             <summary>
             Обучение
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.Capsule">
+        <member name="T:AI.ML.NeuralNetwork.Capsule">
             <summary>
             Капсула
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.Capsule.inputStartInterval">
+        <member name="F:AI.ML.NeuralNetwork.Capsule.inputStartInterval">
             <summary>
             Начало интервал
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.Capsule.inputEndInterval">
+        <member name="F:AI.ML.NeuralNetwork.Capsule.inputEndInterval">
             <summary>
             Окончание интервала 
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.Capsule.neuronCount">
+        <member name="F:AI.ML.NeuralNetwork.Capsule.neuronCount">
             <summary>
             Число нейронов в капсуле
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.Capsule.norm">
+        <member name="F:AI.ML.NeuralNetwork.Capsule.norm">
             <summary>
             Скорость обучения
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Capsule.#ctor(System.Int32,System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Capsule.#ctor(System.Int32,System.Int32,System.Int32)">
             <summary>
             Капсула 
             </summary>
@@ -3740,293 +3740,293 @@
             <param name="iei">Индекс окончание</param>
             <param name="nc">Количество нейронов в капсуле</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Capsule.GetNorms(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.Capsule.GetNorms(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Нормы обучения
             </summary>
             <param name="capsules">Капсулы</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Capsule.GenerateMatrixW(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.Capsule.GenerateMatrixW(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Генерарация весов по капсулам
             </summary>
             <param name="capsules"></param>
             <returns></returns>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.CapsuleRelu">
+        <member name="T:AI.ML.NeuralNetwork.CapsuleRelu">
             <summary>
             Description of CapsulePRelu.
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleRelu.#ctor(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleRelu.#ctor(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Капсульный релу слой
             </summary>
             <param name="caps"></param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleRelu.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleRelu.FActivation(AI.Vector)">
             <summary>
             Ф-я активации
             </summary>
             <param name="inp">Вход</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleRelu.DfDy">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleRelu.DfDy">
             <summary>
             Производная ф-ии активации
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.CapsuleSig">
+        <member name="T:AI.ML.NeuralNetwork.CapsuleSig">
             <summary>
             Сигмоидальный капсульный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleSig.#ctor(AI.ML.NeuronNetwork.Capsule[])">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleSig.#ctor(AI.ML.NeuralNetwork.Capsule[])">
             <summary>
             Капсульный сигмоидальный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleSig.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleSig.FActivation(AI.Vector)">
             <summary>
             Ф-я активации
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.CapsuleSig.DfDy">
+        <member name="M:AI.ML.NeuralNetwork.CapsuleSig.DfDy">
             <summary>
             Производная ф-ии акт
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.FullConLayerBase">
+        <member name="T:AI.ML.NeuralNetwork.FullConLayerBase">
             <summary>
             Полносвязный слой
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.FullConLayerBase.SizeOut">
+        <member name="P:AI.ML.NeuralNetwork.FullConLayerBase.SizeOut">
             <summary>
             Размерность выхода
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.FullConLayerBase.W">
+        <member name="P:AI.ML.NeuralNetwork.FullConLayerBase.W">
             <summary>
             Матрица весов
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.FullConLayerBase.Inp">
+        <member name="F:AI.ML.NeuralNetwork.FullConLayerBase.Inp">
             <summary>
             Вектор входа
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.FullConLayerBase.Delts">
+        <member name="P:AI.ML.NeuralNetwork.FullConLayerBase.Delts">
             <summary>
             Дельты
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.FullConLayerBase.OutputLayer">
+        <member name="P:AI.ML.NeuralNetwork.FullConLayerBase.OutputLayer">
             <summary>
             Выход слоя
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.FullConLayerBase.norm">
+        <member name="F:AI.ML.NeuralNetwork.FullConLayerBase.norm">
             <summary>
             Скорость обучения
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.FullConLayerBase.Eps">
+        <member name="P:AI.ML.NeuralNetwork.FullConLayerBase.Eps">
             <summary>
             Ошибка
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.FullConLayerBase.moment">
+        <member name="F:AI.ML.NeuralNetwork.FullConLayerBase.moment">
             <summary>
             Момент
             </summary>
         </member>
-        <member name="F:AI.ML.NeuronNetwork.FullConLayerBase.Last">
+        <member name="F:AI.ML.NeuralNetwork.FullConLayerBase.Last">
             <summary>
             Матрица весов на прошлой иттерации обучения
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.#ctor">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.#ctor">
             <summary>
             Полносвязный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.#ctor(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.#ctor(System.Int32,System.Int32)">
             <summary>
             Полносвязный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.SetParam(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.SetParam(System.Int32,System.Int32)">
             <summary>
             Установка параметров
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.Output(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.Output(AI.Vector)">
             <summary>
             Прямой проход сети
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.Backwards">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.Backwards">
             <summary>
             Обратный проход сети
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.FActivation(AI.Vector)">
             <summary>
             Ф-я активации
             </summary>
             <param name="inp">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.DfDy">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.DfDy">
             <summary>
             Производная ф-ии активации
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.DeltH(AI.ML.NeuronNetwork.ILayer)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.DeltH(AI.ML.NeuralNetwork.ILayer)">
             <summary>
             Ошибка на скрытом слое
             </summary>
             <param name="layer">Следующий слой</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.Train">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.Train">
             <summary>
             Обучение НС
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.WGenerate(System.Random)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.WGenerate(System.Random)">
             <summary>
             Перегенерирование весов
             </summary>
             <param name="rnd">Случайные числа</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.FullConLayerBase.Delt(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.FullConLayerBase.Delt(AI.Vector)">
             <summary>
             Расчет дельт
             </summary>
             <param name="ideal">Идеальный выход</param>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.ILayer">
+        <member name="T:AI.ML.NeuralNetwork.ILayer">
             <summary>
             Слой нейронной сети
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.ILayer.SizeOut">
+        <member name="P:AI.ML.NeuralNetwork.ILayer.SizeOut">
             <summary>
             Размерность выхода
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.ILayer.Eps">
+        <member name="P:AI.ML.NeuralNetwork.ILayer.Eps">
             <summary>
             Ошибка
             </summary>
         </member>
-        <member name="P:AI.ML.NeuronNetwork.ILayer.Delts">
+        <member name="P:AI.ML.NeuralNetwork.ILayer.Delts">
             <summary>
             Дельты
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.Output(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.Output(AI.Vector)">
             <summary>
             Прямой проход сети
             </summary>
             <param name="input">Вход</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.Delt(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.Delt(AI.Vector)">
             <summary>
             Ошибка на выходе
             </summary>
             <param name="ideal">Идеальный вектор</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.DeltH(AI.ML.NeuronNetwork.ILayer)">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.DeltH(AI.ML.NeuralNetwork.ILayer)">
             <summary>
             Ошибка на скрытом слое
             </summary>
             <param name="layer">Следующий слой</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.Backwards">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.Backwards">
             <summary>
              Обратный проход
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.Train">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.Train">
             <summary>
             Обучение НС
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.WGenerate(System.Random)">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.WGenerate(System.Random)">
             <summary>
             Перегенерация для повторяемости результатов
             </summary>
             <param name="rnd">ГСПЧ</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.ILayer.SetParam(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.ILayer.SetParam(System.Int32,System.Int32)">
             <summary>
             Установка(расчет) параметров НС
             </summary>
             <param name="inp">Размерность входа слоя</param>
             <param name="outp">Число нейронов(размерность выхода)</param>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.LinearLayer">
+        <member name="T:AI.ML.NeuralNetwork.LinearLayer">
             <summary>
             Линейный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.LinearLayer.#ctor(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.LinearLayer.#ctor(System.Int32)">
             <summary>
             Линейный слой
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.LinearLayer.#ctor(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.LinearLayer.#ctor(System.Int32,System.Int32)">
             <summary>
             Линейный слой
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.Sigmoid">
+        <member name="T:AI.ML.NeuralNetwork.Sigmoid">
             <summary>
             Description of Sigmoid.
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Sigmoid.#ctor(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Sigmoid.#ctor(System.Int32,System.Int32)">
             <summary>
             Слой с исгмоидальной активацией
             </summary>
             <param name="inp">Кол-во входов</param>
             <param name="outp">Кол-во выходов(нейронов)</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Sigmoid.#ctor(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Sigmoid.#ctor(System.Int32)">
             <summary>
             Слой с исгмоидальной активацией
             </summary>
             <param name="neuronCount">Кол-во нейронов</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Sigmoid.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.Sigmoid.FActivation(AI.Vector)">
             <summary>
             Функция активации
             </summary>
             <param name="inp">Выход линейного слоя</param>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Sigmoid.DfDy">
+        <member name="M:AI.ML.NeuralNetwork.Sigmoid.DfDy">
             <summary>
             Производная функции активации
             </summary>
         </member>
-        <member name="T:AI.ML.NeuronNetwork.Softmax">
+        <member name="T:AI.ML.NeuralNetwork.Softmax">
             <summary>
             Description of Sofmax.
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Softmax.#ctor(System.Int32,System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Softmax.#ctor(System.Int32,System.Int32)">
             <summary>
             Софтмакс
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Softmax.#ctor(System.Int32)">
+        <member name="M:AI.ML.NeuralNetwork.Softmax.#ctor(System.Int32)">
             <summary>
             Софтмакс
             </summary>
         </member>
-        <member name="M:AI.ML.NeuronNetwork.Softmax.FActivation(AI.Vector)">
+        <member name="M:AI.ML.NeuralNetwork.Softmax.FActivation(AI.Vector)">
             <summary>
             Ф-я активации
             </summary>
@@ -4234,45 +4234,6 @@
             </summary>
             <param name="vect">Вектор входа</param>
             <returns>Вектор выхода</returns>
-        </member>
-        <member name="T:AI.ML.Simplex">
-            <summary>
-            Симплекс-метод
-            </summary>
-        </member>
-        <member name="P:AI.ML.Simplex.CalculatedTable">
-            <summary>
-            Итоговая матрица
-            </summary>
-        </member>
-        <member name="P:AI.ML.Simplex.Cost">
-            <summary>
-            Выигрыш от стратегии
-            </summary>
-        </member>
-        <member name="M:AI.ML.Simplex.#ctor(AI.Matrix)">
-            <summary>
-            Симплекс-метод
-            </summary>
-            <param name="source">Матрица входа</param>
-        </member>
-        <member name="M:AI.ML.Simplex.Run">
-            <summary>
-            Запуск метода
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Simplex.ToString">
-            <summary>
-            Вывод строки
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AI.ML.Simplex.ToString(System.Int32)">
-            <summary>
-            Вывод строки
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:AI.HMM.HiMaMoWords">
             <summary>
@@ -4485,12 +4446,13 @@
             Класс для реализации цифровых фильтров
             </summary>
         </member>
-        <member name="M:AI.Signals.Filters.Filter(AI.Vector,AI.Vector)">
+        <member name="M:AI.Signals.Filters.Filter(AI.Vector,AI.Vector,System.Boolean)">
             <summary>
             Реализация простого фильтра
             </summary>
             <param name="st">Вектор сигнала</param>
             <param name="kw">АЧХ</param>
+            <param name="mean">Нужна ли постоянная составляющая</param>
             <returns>Фильтрованный сигнал</returns>
         </member>
         <member name="M:AI.Signals.Filters.FilterKontur(AI.Vector,System.Double,System.Double,System.Int32)">
@@ -4565,6 +4527,13 @@
             <param name="oldPart">Коэффициент сглаживания</param>
             <returns></returns>
         </member>
+        <member name="M:AI.Signals.Filters.MAv(AI.Vector,System.Int32)">
+            <summary>
+            Cкользящее среднее
+            </summary>
+            <param name="inp">Вход</param>
+            <param name="l">Размер окна</param>
+        </member>
         <member name="M:AI.Signals.Filters.GetEnvelope(AI.Vector,System.Int32)">
             <summary>
             Получение огибающей
@@ -4596,6 +4565,105 @@
             <summary>
             Полосовой
             </summary>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.DoFFT(AI.ComplexVector)">
+            <summary>
+            Perform a complex fast fourier transform on an array.
+            </summary>
+            <param name="samples">array of audio samples (imaginary part will be zero)</param>
+            <returns>the fourier transformation of the samples</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.Convolve(AI.ComplexVector,AI.ComplexVector)">
+            <summary>
+            Perform 1D convolution of two complex arrays.
+            </summary>
+            <param name="signalToConvolve1"></param>
+            <param name="signalToConvolve2"></param>
+            <returns>the fourier transformation of the samples</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.ConvolveWithIR(AI.ComplexVector,AI.ComplexVector)">
+            <summary>
+            Выполняет одномерную свертку двух компл. векторов разной разм.
+            </summary>
+            <param name="signalToConvolve1"></param>
+            <param name="signalToConvolve2"></param>
+            <returns>the fourier transformation of the samples</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.DoCrossCorrelation(AI.ComplexVector,AI.ComplexVector)">
+            <summary>
+            Perform cross-correlation of two complex arrays.
+            </summary>
+            <param name="complexArrayX">array of audio samples (imaginary part will be zero)</param>
+            <param name="complexArrayY">array of audio samples (imaginary part will be zero)</param>
+            <returns>the cross-correlation of the samples</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.DoIRFFT(AI.ComplexVector,System.Int32)">
+            <summary>
+            Perform a complex fast Fourier transform on an array with a specified number of samples.
+            </summary>
+            <param name="complexArray">array of audio samples (imaginary parts will be zero)</param>
+            <param name="numSamples">number of samples in longer file</param>
+            <returns>the Fourier transformation of the samples</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.RecursiveFFT(System.Numerics.Complex[])">
+            <summary>
+            Recursively compute the complex fast Fourier transform of an array. 
+            Implemented using a recursive implementation of the Cooley-Tukey radix-2 algorithm: O(n log n)
+            </summary>
+            <param name="complexArray">array of complexArray (size should be padded with zeros to a length of the first power of 2
+            equal to or greater than the intial length</param>
+            <returns>the discrete Fourier transformation of the complexArray</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.DoInverseFFT(AI.ComplexVector)">
+            <summary>
+            Recursively compute an inverse complex fast Fourier transform of an array. 
+            Implemented using a recursive implementation of the Cooley-Tukey radix-2 algorithm: O(n log n)
+            </summary>
+            <param name="complexVector">array of complexArray (size should be padded with zeros to a length of the first power of 2
+            equal to or greater than the intial length</param>
+            <returns>the fourier transformation of the complexArray</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.FindSampleOffset(System.IO.MemoryStream,System.IO.MemoryStream)">
+            <summary>
+            Finds the relative offset in # of samples between two PCM/wav files
+            </summary>
+            <param name="memoryStreamX">A memory stream the emitted test signal PCM data</param>
+            <param name="memoryStreamY">A memory stream of the PCM data of the captured result</param>
+            <returns>The number of samples between the click in memoryStreamX and that of memoryStreamY</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.IsPowerOfTwo(System.Int64)">
+            <summary>
+            Checks if a number is a power of two.
+            Handles the 0 and negative value cases.
+            </summary>
+            <param name="num">number to check</param>
+            <returns>true if the parameter represents a power of two, false otherwise</returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.ResizeAndZeroPad(System.Numerics.Complex[],System.Int32)">
+            <summary>
+            Right-pad the array length with zeros to the first power of 2 which is either
+            A) equal to or greater than twice the original array length (default behavior - 'targetSamples' set to 0), 
+            or
+            B) equal to or greater than twice the length specified by the 'targetSamples' parameter,
+                if the integer passed is greater than the original array length
+            
+            ~~ note on second parameter ~~
+            - the 'targetSamples' parameter specifies the minimum number of
+               samples from which to resize and zero-pad. This is useful when convolving a long signal
+               with a short impulse response.
+            - it only has an effect if a value greater than the original array length is passed
+            </summary>
+            <param name="complexArray">the complex array to resize</param>
+            <param name="targetSamples">minimum number of samples from which to size the padded array (0 == default behavior)</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Signals.FurCor.FFT.NecessarySignificantBits(System.Int32)">
+            <summary>
+            Compute the number of significant bits required to store a number
+            (the first sufficiently large power of 2)
+            </summary>
+            <param name="num">a number</param>
+            <returns>minimum number of bits necessary to store the number</returns>
         </member>
         <member name="T:AI.Signals.GetSpectrEnerge">
             <summary>
@@ -4980,20 +5048,6 @@
             </summary>
             <param name="sig">Сигнал</param>
             <returns>Максимумы патернов</returns>
-        </member>
-        <member name="M:AI.Signals.Wavelet.FWT(AI.Vector)">
-            <summary>
-            Быстрое вельвет преобразование
-            </summary>
-            <param name="inp">Входной вектор</param>
-            <returns>Результат</returns>
-        </member>
-        <member name="M:AI.Signals.Wavelet.IFWT(AI.Vector)">
-            <summary>
-            Обратное быстрое вельвет преобразование
-            </summary>
-            <param name="inp">Входной вектор</param>
-            <returns>Результат</returns>
         </member>
         <member name="T:AI.Signals.PerentWavelet">
             <summary>
