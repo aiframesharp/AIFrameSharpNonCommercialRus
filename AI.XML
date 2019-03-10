@@ -4290,6 +4290,314 @@
             <param name="strs">Строки входа</param>
             <returns></returns>
         </member>
+        <member name="T:AI.NLP.BoWModel">
+            <summary>
+            Bag-of-Words модель
+            </summary>
+        </member>
+        <member name="F:AI.NLP.BoWModel.vector">
+            <summary>
+            Вектор, в котором все 0 кроме позиции слова
+            </summary>
+        </member>
+        <member name="P:AI.NLP.BoWModel.isStop">
+            <summary>
+            Анализируются ли стоп слова
+            </summary>
+        </member>
+        <member name="P:AI.NLP.BoWModel.isDig">
+            <summary>
+            Пропускаются ли числа
+            </summary>
+        </member>
+        <member name="F:AI.NLP.BoWModel.Len">
+            <summary>
+            Длинна вектора/словаря
+            </summary>
+        </member>
+        <member name="P:AI.NLP.BoWModel.IsNormalise">
+            <summary>
+            Происходит ли нормализация вектора
+            </summary>
+        </member>
+        <member name="M:AI.NLP.BoWModel.#ctor(System.String)">
+            <summary>
+            Bag-of-Words модель
+            </summary>
+        </member>
+        <member name="M:AI.NLP.BoWModel.GetVector(System.String)">
+            <summary>
+            Получение вектора из текста
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.BoWModel.ModelGen(System.String,System.String,System.Boolean)">
+            <summary>
+            Генерация модели
+            </summary>
+        </member>
+        <member name="T:AI.NLP.ProbabilityDictionaryData">
+            <summary>
+            Данные вероятностного словаря
+            </summary>
+        </member>
+        <member name="T:AI.NLP.ProbabilityDictionary">
+            <summary>
+            Вероятностный словарь
+            </summary>
+        </member>
+        <member name="P:AI.NLP.ProbabilityDictionary.StopWords">
+            <summary>
+            Слова не несущие смысла при стат. анализе
+            </summary>
+        </member>
+        <member name="M:AI.NLP.ProbabilityDictionary.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Вероятностный словарь
+            </summary>
+            <param name="isStopDel">Удалять ли стоп-слова</param>
+            <param name="isDigitDel">Удалять ли числа</param>
+            <param name="isStem">Делать ли стеммеризацию</param>
+        </member>
+        <member name="M:AI.NLP.ProbabilityDictionary.Run(System.String)">
+            <summary>
+            Данные вероятностного словаря
+            </summary>
+            <param name="text">Тукст</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.ProbabilityDictionary.DigialPredickat(System.String)">
+            <summary>
+            Возвращает true если в сторке есть цифры
+            </summary>
+            <param name="str">Строка</param>
+        </member>
+        <member name="M:AI.NLP.ProbabilityDictionary.Analis">
+            <summary>
+            Анализ текста
+            </summary>
+        </member>
+        <member name="M:AI.NLP.ProbabilityDictionary.ToString(System.Int32)">
+            <summary>
+            Переводит частотный словарь в строку
+            </summary>
+            <param name="index">До какого индекса</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI.NLP.HMMFast">
+            <summary>
+            Быстрые марковские цепи
+            </summary>
+        </member>
+        <member name="F:AI.NLP.HMMFast.nGram">
+            <summary>
+            Глубина моделирования
+            </summary>
+        </member>
+        <member name="P:AI.NLP.HMMFast.ProbVector">
+            <summary>
+            Вектор вероятностей
+            </summary>
+        </member>
+        <member name="P:AI.NLP.HMMFast.ProbVectorInvers">
+            <summary>
+            1- вектор вероятностей, полезен для установки квантелей
+            </summary>
+        </member>
+        <member name="M:AI.NLP.HMMFast.#ctor">
+            <summary>
+            Быстрые марковские цепи
+            </summary>
+        </member>
+        <member name="M:AI.NLP.HMMFast.#ctor(System.String)">
+            <summary>
+            Быстрые марковские цепи
+            </summary>
+        </member>
+        <member name="M:AI.NLP.HMMFast.Train(System.String)">
+            <summary>
+            Обучение языковой модели
+            </summary>
+            <param name="TrainText">Тренировочный текст</param>
+        </member>
+        <member name="M:AI.NLP.HMMFast.ComprateStrArray(System.String[],System.String[])">
+            <summary>
+            Сравнение массивов строк
+            </summary>
+            <param name="arr1"></param>
+            <param name="arr2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.HMMFast.Generate(System.Int32,System.String[])">
+            <summary>
+            Генерация текста
+            </summary>
+            <param name="num">число слов</param>
+            <param name="strs">начальное состояние</param>
+            <returns>сгенерированная строка</returns>
+        </member>
+        <member name="M:AI.NLP.HMMFast.TextToVector(System.String)">
+            <summary>
+            Преобразование текста в вектор + изменение модели
+            </summary>
+            <param name="text">текст</param>
+            <returns>вектор</returns>
+        </member>
+        <member name="M:AI.NLP.HMMFast.Save(System.String)">
+            <summary>
+            Сохранение модели
+            </summary>
+            <param name="path">путь до файла</param>
+        </member>
+        <member name="M:AI.NLP.HMMFast.Open(System.String)">
+            <summary>
+            Загрузка матрицы
+            </summary>
+            <param name="path">Путь до файла</param>		
+        </member>
+        <member name="T:AI.NLP.SemanticDictionary">
+            <summary>
+            Семантический соварь
+            </summary>
+            
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.#ctor(System.String)">
+            <summary>
+            Семантический словарь
+            </summary>
+            <param name="path">Путь до словаря</param>
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.WordToVector(System.String)">
+            <summary>
+            Преобразование текста в вектор
+            </summary>
+            <param name="word"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.Sim(System.String,System.String)">
+            <summary>
+            Схожесть двух слов
+            </summary>
+            <param name="word1"></param>
+            <param name="word2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.CompressData(System.String,System.String)">
+            <summary>
+            Загрузка данных из W2V
+            </summary>
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.Save(System.String)">
+            <summary>
+            Сохранение
+            </summary>
+            <param name="path">Путь до файла</param>
+        </member>
+        <member name="M:AI.NLP.SemanticDictionary.Open(System.String)">
+            <summary>
+            Загрузка
+            </summary>
+            <param name="path">Путь до файла</param>		
+        </member>
+        <member name="T:AI.NLP.Stemmers.StemmerRus">
+            <summary>
+            Стемер русского языка
+            </summary>
+        </member>
+        <member name="T:AI.NLP.TextAnalise">
+            <summary>
+            Анализ текста(Семантика)
+            </summary>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.#ctor">
+            <summary>
+            Анализ текста
+            </summary>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.#ctor(System.String)">
+            <summary>
+            Анализ текста
+            </summary>
+            <param name="pathDic">Путь до словаря</param>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.GetSemantic(System.String,System.Boolean)">
+            <summary>
+            Семантика из предложения
+            </summary>
+            <param name="sen">Предложение</param>
+            <param name="stop">Учитывать ли стоп-слова</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.Sim(System.String,System.String)">
+            <summary>
+            Семантическая близость 2-х текстов
+            </summary>
+            <param name="str1">Первый текст</param>
+            <param name="str2">Второй текст</param>
+            <returns>Коэфициент сходства</returns>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.Sim(AI.Vector,AI.Vector)">
+            <summary>
+            Близость 2-х векторов
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.Train(System.String,AI.Vector,System.Double)">
+            <summary>
+            Обучение словаря
+            </summary>
+            <param name="sen">Предложение</param>
+            <param name="ideal">Идеальный вектор тем</param>
+            <param name="norm">Норма обучения</param>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.GetWords(System.String)">
+            <summary>
+            Парсер
+            </summary>
+            <param name="text">Текст</param>
+            <returns>Список слов</returns>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.SaveDic(System.String)">
+            <summary>
+            Сохранение словаря
+            </summary>
+            <param name="path">Путь</param>
+        </member>
+        <member name="M:AI.NLP.TextAnalise.SeqNormalise(System.String)">
+            <summary>
+            Нормализация предложения
+            </summary>
+            <param name="str">ненормализованное предложение</param>
+            <returns>нормализованное</returns>
+        </member>
+        <member name="T:AI.NLP.WordToSemantic">
+            <summary>
+            Перевод слова в семантический вектор
+            </summary>
+        </member>
+        <member name="M:AI.NLP.WordToSemantic.#ctor(System.String)">
+            <summary>
+            Загрузка
+            </summary>
+            <param name="path">Путь до словаря</param>
+        </member>
+        <member name="M:AI.NLP.WordToSemantic.Word2Sem(System.String[])">
+            <summary>
+            Преобразование в вектор
+            </summary>
+            <param name="text">Слова</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.WordToSemantic.SentenceToVectorArray(System.String)">
+            <summary>
+            Преобразование предложения в массив векторов
+            </summary>
+            <param name="sentence">предложение</param>
+            <returns>Массив векторов</returns>
+        </member>
         <member name="T:AI.Properties.Resources">
             <summary>
               Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
