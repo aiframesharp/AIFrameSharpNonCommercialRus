@@ -3,7 +3,7 @@
 
 ## **Пространства имен:**
 
-[AdditionalFunctions](/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
+[AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
 
 Algebra — На данный момент там только метод Крамера
 
@@ -11,7 +11,7 @@ AlgorAnalise — Методы анализа алгоритмов, исполь�
 
 Approximation — Аппроксимация
 
-[Charts](/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Charts) — методы работы с графиками
+[Charts](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Charts) — методы работы с графиками
 
 Combinatorics — Комбинаторика
 
@@ -46,7 +46,7 @@ InformationBlock
 
 IntervalData
 
-[Matrix](/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Matrix)
+[Matrix](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Matrix)
 
 Sound
 
@@ -54,7 +54,7 @@ Tensor
 
 Var
 
-[Vector](/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Vector)
+[Vector](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Vector)
 
 WindowForFFT
 
