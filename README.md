@@ -5,29 +5,29 @@
 
 [AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
 
-Algebra — На данный момент там только метод Крамера
+[Algebra](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Algebra) — На данный момент там только метод Крамера
 
-AlgorAnalise — Методы анализа алгоритмов, использую их в своей диссертации, вряд ли кому-нибудь пригодится.
+[AlgorAnalise](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AlgorAnalise) — Методы анализа алгоритмов, использую их в своей диссертации, вряд ли кому-нибудь пригодится.
 
-Approximation — Аппроксимация
+[Approximation](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Approximation) — Аппроксимация
 
 [Charts](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Charts) — методы работы с графиками
 
-Combinatorics — Комбинаторика
+[Combinatorics](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Combinatorics) — Комбинаторика
 
-ComputerVision — Компьютерное зрение
+[ComputerVision](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.ComputerVision) — Компьютерное зрение
 
-HMM — Марковские модели текста
+[HMM](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.HMM) — Марковские модели
 
-ML — Машинное обучение
+[ML](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.ML) — Машинное обучение
 
-NLP — обработка естественного языка
+[NLP](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.NLP) — обработка естественного языка
 
-Signals — цифровая обработка сигналов(генерация, фильтрация, преобразование Гильберта, кепстральное, DCT, вейвлеты)
+[Signals](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Signals) — цифровая обработка сигналов(генерация, фильтрация, преобразование Гильберта, кепстральное, DCT, вейвлеты)
 
-SparseData — работа с разреженными векторами
+[SparseData](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.SparseData) — работа с разреженными векторами
 
-Statistics — Математическая статистика
+[Statistics](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Statistics) — Математическая статистика
 
 
 ## **Классы:**
