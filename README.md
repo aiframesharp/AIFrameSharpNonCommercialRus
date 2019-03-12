@@ -18,16 +18,16 @@
 
 
 ## **Классы:**
-* ComplexVector
-* Correlation
-* FLV
-* Functions
-* Furie
-* InformationBlock
-* IntervalData
-* [Matrix](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Matrix)
-* Sound
-* Tensor
-* Var
-* [Vector](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Vector)
-* WindowForFFT
+* [ComplexVector](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.ComplexVector) — Вектор комплексных чисел.
+* [Correlation](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Correlation) — Реализация корреляционных функций
+* [FLV](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.FLV) — Нечеткая логическая переменная
+* [Functions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Functions) — Основные функции, суммирование, интегрирование, дифференцирование и т.п. 
+* [Furie](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Furie) — Преобразование Фурье
+* [InformationBlock](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.InformationBlock) — Информационный блок
+* [IntervalData](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.IntervalData) — данные об интервалах, на которые "нарезаны" вектора
+* [Matrix](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Matrix) — Матрицы double[,]
+* [Sound](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Sound) — Работа с Wav форматом
+* [Tensor](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Tensor) — Тензор 3-го ранга
+* [Var](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Var) — Аналог нетипизированной переменной 
+* [Vector](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Vector) — Вектора List<double>
+* [WindowForFFT](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.WindowForFFT) — оконные функции для преобразования Фурье
