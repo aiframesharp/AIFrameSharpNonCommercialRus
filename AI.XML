@@ -17,41 +17,47 @@
             <param name="B">Вектор ответов</param>
             <returns>Вектор неизвестных</returns>
         </member>
-        <member name="T:AI.AlgorAnalise.CorrelationAnalise">
+        <member name="T:AI.AlgorithmAnalysis.CorrelationAnalise">
             <summary>
             Корреляционный анализ (проверка ортогональности)
             </summary>
         </member>
-        <member name="P:AI.AlgorAnalise.CorrelationAnalise.CorMatrNorm">
+        <member name="P:AI.AlgorithmAnalysis.CorrelationAnalise.CorMatrNorm">
             <summary>
             Нормированная корреляционная матрица
             </summary>
         </member>
-        <member name="M:AI.AlgorAnalise.CorrelationAnalise.#ctor(AI.Matrix)">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.#ctor(AI.Matrix)">
             <summary>
             Корреляционный анализ
             </summary>
             <param name="matrix">Матрица перехода</param>
         </member>
-        <member name="M:AI.AlgorAnalise.CorrelationAnalise.MeanOrtog">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.MeanOrtog">
             <summary>
             Средний коэффициент ортогональности
             </summary>
             <returns></returns>
         </member>
-        <member name="T:AI.AlgorAnalise.SimilarityOfBases">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.CorMatrDeterm">
+            <summary>
+            Определитель корреляционной  матрицы (один из показателей мультиколлинеарности)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI.AlgorithmAnalysis.SimilarityOfBases">
             <summary>
             Проверка схожести двух базисов
             </summary>
         </member>
-        <member name="M:AI.AlgorAnalise.SimilarityOfBases.#ctor(AI.Matrix,AI.Matrix)">
+        <member name="M:AI.AlgorithmAnalysis.SimilarityOfBases.#ctor(AI.Matrix,AI.Matrix)">
             <summary>
             Проверка схожести двух базисов
             </summary>
             <param name="bas1">Базис №1</param>
             <param name="bas2">Базис №2</param>
         </member>
-        <member name="M:AI.AlgorAnalise.SimilarityOfBases.ProbRandBasis">
+        <member name="M:AI.AlgorithmAnalysis.SimilarityOfBases.ProbRandBasis">
             <summary>
             Вероятность что базисы не связаны (случайны)
             </summary>
@@ -2273,11 +2279,6 @@
             <param name="B"></param>
             <returns></returns>
         </member>
-        <member name="M:AI.Matrix.Determ">
-            <summary>
-            Вычисляет определитель матрицы
-            </summary>
-        </member>
         <member name="M:AI.Matrix.ToVector">
             <summary>
              Преобразование матрицы в вектор
@@ -2337,13 +2338,6 @@
             Округление значений
             </summary>
             <param name="n">До какого знака</param>
-        </member>
-        <member name="M:AI.Matrix.QRDecomposition(AI.Matrix)">
-            <summary>
-            QR Разложение матрицы
-            </summary>
-            <param name="input">Входная матрица</param>
-            <returns>Матрица Q и R (первая — Q, вторая R)</returns>
         </member>
         <member name="M:AI.Matrix.Save(System.String)">
             <summary>
@@ -2408,81 +2402,81 @@
             </summary>
             <param name="path">Путь до файла</param>		
         </member>
-        <member name="T:AI.ML.Classifire.StructClass">
+        <member name="T:AI.ML.Classifiers.StructClass">
             <summary>
             Структура для хранения класса
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClass._strName">
+        <member name="F:AI.ML.Classifiers.StructClass._strName">
             <summary>
             Имя класса
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClass._centGiperSfer">
+        <member name="F:AI.ML.Classifiers.StructClass._centGiperSfer">
             <summary>
             Центр гиперсферы
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClass.NumCl">
+        <member name="P:AI.ML.Classifiers.StructClass.NumCl">
             <summary>
             Имя класса
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClass.CentGiperSfer">
+        <member name="P:AI.ML.Classifiers.StructClass.CentGiperSfer">
             <summary>
             Центр гиперсферы
             </summary>
         </member>
-        <member name="T:AI.ML.Classifire.StructClasses">
+        <member name="T:AI.ML.Classifiers.StructClasses">
             <summary>
             Структура классификатора
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClasses._classes">
+        <member name="F:AI.ML.Classifiers.StructClasses._classes">
             <summary>
             Коллекция классов
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClasses.Classes">
+        <member name="P:AI.ML.Classifiers.StructClasses.Classes">
             <summary>
             Список классов
             </summary>
         </member>
-        <member name="T:AI.ML.Classifire.Classifier">
+        <member name="T:AI.ML.Classifiers.kNN">
             <summary>
-            Классификатор
+            Классификатор (метод ближайшего соседа) простейший и довольно эффективный метод классификации
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.Classifier.Classes">
+        <member name="P:AI.ML.Classifiers.kNN.Classes">
             <summary>
             Массив классов
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.#ctor">
+        <member name="M:AI.ML.Classifiers.kNN.#ctor">
             <summary>
-            Классификатор
+            Классификатор (Метод ближайшего соседа)
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.#ctor(System.String)">
+        <member name="M:AI.ML.Classifiers.kNN.#ctor(System.String)">
             <summary>
-            Классификатор
+            Классификатор (Метод ближайшего соседа)
             </summary>
             <param name="path">Путь до файла</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.#ctor(AI.ML.Classifire.StructClasses)">
+        <member name="M:AI.ML.Classifiers.kNN.#ctor(AI.ML.Classifiers.StructClasses)">
             <summary>
-            Классивикатор
+            Классификатор (Метод ближайшего соседа)
             </summary>
             <param name="classifikator"> Коллекция классов</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.GetCentr(AI.Vector[])">
+        <member name="M:AI.ML.Classifiers.kNN.GetCentr(AI.Vector[])">
             <summary>
             Поиск центра класса
             </summary>
             <param name="vectors">Точки класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.Teach1(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.kNN.Teach1(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
@@ -2490,7 +2484,7 @@
             <param name="nameClass">Индекс класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClasses(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.kNN.AddClasses(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
@@ -2498,7 +2492,7 @@
             <param name="numClass">индекс класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClass1(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.kNN.AddClass1(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
@@ -2506,7 +2500,7 @@
             <param name="numClass">Номер класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClass(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.kNN.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
@@ -2514,111 +2508,111 @@
             <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.Save(System.String)">
+        <member name="M:AI.ML.Classifiers.kNN.Save(System.String)">
             <summary>
             Сохранение классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.Open(System.String)">
+        <member name="M:AI.ML.Classifiers.kNN.Open(System.String)">
             <summary>
             Загрузка классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.Recognize(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.kNN.Recognize(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.AddClass(AI.Vector,System.Int32)">
+        <member name="M:AI.ML.Classifiers.kNN.AddClass(AI.Vector,System.Int32)">
             <summary>
             Добавление класса
             </summary>
             <param name="tData">Центральный вектор</param>
             <param name="num">Индекс класса</param>
         </member>
-        <member name="M:AI.ML.Classifire.Classifier.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.kNN.RecognizeVector(AI.Vector)">
             <summary>
             Возращает вектор, его длинна - число классов, на номере нужного класса стоит 1
             </summary>
             <param name="inp">Вектор входа</param>
             <returns></returns>
         </member>
-        <member name="T:AI.ML.Classifire.StructClassCorr">
+        <member name="T:AI.ML.Classifiers.StructClassCorr">
             <summary>
             Структура для хранения класса
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClassCorr._strName">
+        <member name="F:AI.ML.Classifiers.StructClassCorr._strName">
             <summary>
             Имя класса
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClassCorr._centGiperSfer">
+        <member name="F:AI.ML.Classifiers.StructClassCorr._centGiperSfer">
             <summary>
             Центр гиперсферы
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClassCorr.Probability">
+        <member name="P:AI.ML.Classifiers.StructClassCorr.Probability">
             <summary>
             Вероятность принадлежности
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClassCorr.StrName">
+        <member name="P:AI.ML.Classifiers.StructClassCorr.StrName">
             <summary>
             Индекс класса
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClassCorr.CentGiperSfer">
+        <member name="P:AI.ML.Classifiers.StructClassCorr.CentGiperSfer">
             <summary>
             Центр гиперсферы
             </summary>
         </member>
-        <member name="T:AI.ML.Classifire.StructClassesCorr">
+        <member name="T:AI.ML.Classifiers.StructClassesCorr">
             <summary>
             Структура классификатора
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.StructClassesCorr._classes">
+        <member name="F:AI.ML.Classifiers.StructClassesCorr._classes">
             <summary>
             Список классов
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.StructClassesCorr.Classes">
+        <member name="P:AI.ML.Classifiers.StructClassesCorr.Classes">
             <summary>
             Список классов
             </summary>
         </member>
-        <member name="T:AI.ML.Classifire.CorrelationClassifier">
+        <member name="T:AI.ML.Classifiers.CorrelationClassifier">
             <summary>
             Классификатор
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.CorrelationClassifier.Classes">
+        <member name="P:AI.ML.Classifiers.CorrelationClassifier.Classes">
             <summary>
             Классы
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.#ctor">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.#ctor">
             <summary>
             Корреляционный классификатор
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.#ctor(System.String)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.#ctor(System.String)">
             <summary>
             Классификатор
             </summary>
             <param name="path">Путь до файла</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.#ctor(AI.ML.Classifire.StructClassesCorr)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.#ctor(AI.ML.Classifiers.StructClassesCorr)">
             <summary>
             Классификатор
             </summary>
             <param name="classifikator"> Коллекция классов</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.CorrelationMetric(AI.Vector,AI.Vector)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.CorrelationMetric(AI.Vector,AI.Vector)">
             <summary>
             Корреляционная метрика
             </summary>
@@ -2626,21 +2620,21 @@
             <param name="B">Второй вектор</param>
             <returns>Коэффициент корреляции нормированный [0;1]</returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.GetCentr(AI.Vector[])">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.GetCentr(AI.Vector[])">
             <summary>
             Поиск центра класса
             </summary>
             <param name="vectors">Точки класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Recognition(AI.Vector[])">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.Recognition(AI.Vector[])">
             <summary>
             Распознавание набора векторов
             </summary>
             <param name="vects">Вектора</param>
             <returns>Вектор меток</returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Teach1(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.Teach1(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
@@ -2648,7 +2642,7 @@
             <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClasses(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.AddClasses(AI.Vector[],System.Int32)">
             <summary>
             Обучение одного элеменнта класса
             </summary>
@@ -2656,218 +2650,182 @@
             <param name="numClass">Имя класса</param>
             <returns></returns>
         </member>
-        <!-- Проигнорирован некорректный комментарий XML для члена "M:AI.ML.Classifire.CorrelationClassifier.AddClass1(AI.Vector[],System.Int32)" -->
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass(AI.Vector[],System.Int32)">
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:AI.ML.Classifiers.CorrelationClassifier.AddClass1(AI.Vector[],System.Int32)" -->
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса в классификатор
             </summary>
             <param name="tDataset">Выборка</param>
             <param name="numClass">Имя класса</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Save(System.String)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.Save(System.String)">
             <summary>
             Сохранение классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Open(System.String)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.Open(System.String)">
             <summary>
             Загрузка классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVectorStruct(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.RecognizeVectorStruct(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.AddClass(AI.Vector,System.Int32)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.AddClass(AI.Vector,System.Int32)">
             <summary>
             Добавление класса
             </summary>
             <param name="tData">Центральный вектор</param>
             <param name="num">Индекс класса</param>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.Recognize(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.Recognize(AI.Vector)">
             <summary>
             Распознавание вектора
             </summary>
             <param name="inp">Вход</param>
             <returns>Индекс класса</returns>
         </member>
-        <member name="M:AI.ML.Classifire.CorrelationClassifier.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.CorrelationClassifier.RecognizeVector(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="T:AI.ML.Classifire.IClassifire">
+        <member name="T:AI.ML.Classifiers.IClassifier">
             <summary>
             Интерфейс для работы классификаторов
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.AddClass(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.IClassifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса
             </summary>
             <param name="tDataset">Выборка</param>
             <param name="nameClass">Номер класса</param>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.AddClass(AI.Vector,System.Int32)">
+        <member name="M:AI.ML.Classifiers.IClassifier.AddClass(AI.Vector,System.Int32)">
             <summary>
             Добавление класса
             </summary>
             <param name="data">"Вектор</param>
             <param name="nameClass">Номер класса</param>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.Save(System.String)">
+        <member name="M:AI.ML.Classifiers.IClassifier.Save(System.String)">
             <summary>
             Сохранение классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.Open(System.String)">
+        <member name="M:AI.ML.Classifiers.IClassifier.Open(System.String)">
             <summary>
             Загрузка классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.Recognize(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.IClassifier.Recognize(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="M:AI.ML.Classifire.IClassifire.RecognizeVector(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.IClassifier.RecognizeVector(AI.Vector)">
             <summary>
             Распознавание
             </summary>
             <param name="inp">Вектор который надо распознать</param>
         </member>
-        <member name="T:AI.ML.Classifire.LogisticRegression">
-            <summary>
-            Логистическая регрессия
-            </summary>
-        </member>
-        <member name="F:AI.ML.Classifire.LogisticRegression.t">
-            <summary>
-            Вектор замены
-            </summary>
-        </member>
-        <member name="M:AI.ML.Classifire.LogisticRegression.#ctor(AI.Vector,System.Boolean[])">
-            <summary>
-            Логистическая регрессия
-            </summary>
-            <param name="x"></param>
-            <param name="y"></param>
-        </member>
-        <member name="M:AI.ML.Classifire.LogisticRegression.#ctor(AI.Vector[],System.Boolean[])">
-            <summary>
-            Логистическая регрессия
-            </summary>
-            <param name="x">Вектора входов</param>
-            <param name="y">Принадлежность</param>
-        </member>
-        <member name="M:AI.ML.Classifire.LogisticRegression.Recognition(AI.Vector)">
-            <summary>
-            Распознавание вектора
-            </summary>
-            <param name="x">Вектор</param>
-        </member>
-        <member name="M:AI.ML.Classifire.LogisticRegression.RecognitionAll(AI.Vector)">
-            <summary>
-            Распознавание векторов
-            </summary>
-            <param name="x">Вектора</param>
-        </member>
-        <member name="T:AI.ML.Classifire.SModel">
+        <member name="T:AI.ML.Classifiers.SModel">
             <summary>
             Модель класса
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SModel.Probability">
+        <member name="P:AI.ML.Classifiers.SModel.Probability">
             <summary>
             Вероятность
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SModel.NumClass">
+        <member name="P:AI.ML.Classifiers.SModel.NumClass">
             <summary>
             Номер
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SModel.Weights">
+        <member name="P:AI.ML.Classifiers.SModel.Weights">
             <summary>
             Веса для каждого компонента
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SModel.ProbabilityApriory">
+        <member name="P:AI.ML.Classifiers.SModel.ProbabilityApriory">
             <summary>
             Априорная вероятность
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SModel.#ctor">
+        <member name="M:AI.ML.Classifiers.SModel.#ctor">
             <summary>
             Задание модели по умолчанию
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SModel.CalculateProb">
+        <member name="M:AI.ML.Classifiers.SModel.CalculateProb">
             <summary>
             Рассчет вероятностей с учетом весов
             </summary>
         </member>
-        <member name="T:AI.ML.Classifire.SModelComponent">
+        <member name="T:AI.ML.Classifiers.SModelComponent">
             <summary>
             Модель компоненты вектора
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.SModelComponent._e">
+        <member name="F:AI.ML.Classifiers.SModelComponent._e">
             <summary>
             Мат. ожидаине
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.SModelComponent._std">
+        <member name="F:AI.ML.Classifiers.SModelComponent._std">
             <summary>
             СКО
             </summary>
         </member>
-        <member name="F:AI.ML.Classifire.SModelComponent.pr">
+        <member name="F:AI.ML.Classifiers.SModelComponent.pr">
             <summary>
             Вероятность
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SModelComponent.#ctor">
+        <member name="M:AI.ML.Classifiers.SModelComponent.#ctor">
             <summary>
             Стат. модель компонента модели
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SModelComponent.#ctor(System.Double,System.Double)">
+        <member name="M:AI.ML.Classifiers.SModelComponent.#ctor(System.Double,System.Double)">
             <summary>
             Стат. модель компонента модели
             </summary>
             <param name="e">Мат. ожидание</param>
             <param name="std">Среднеквадратичное отклонение</param>
         </member>
-        <member name="T:AI.ML.Classifire.SimpleFLClassifier">
+        <member name="T:AI.ML.Classifiers.SimpleFLClassifier">
             <summary>
             Простой статистический классификатор, 
             который предполагает, что у величины 
             гауссовский з-н распределения
             </summary>
         </member>
-        <member name="P:AI.ML.Classifire.SimpleFLClassifier.Threshold">
+        <member name="P:AI.ML.Classifiers.SimpleFLClassifier.Threshold">
             <summary>
             Порог
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.#ctor">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.#ctor">
             <summary>
             Простой статистический классификатор, 
             который предполагает, что у величины 
             гауссовский з-н распределения
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.#ctor(System.String)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.#ctor(System.String)">
             <summary>
             Простой статистический классификатор, 
             который предполагает, что у величины 
@@ -2875,48 +2833,48 @@
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.Output(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.Output(AI.Vector)">
             <summary>
             Выход
             </summary>
             <param name="inp">Вектор входа</param>
             <returns>Максимально похожая модель</returns>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddModel(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.AddModel(AI.Vector[],System.Int32)">
             <summary>
             Добавление модели
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.GetWeights">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.GetWeights">
             <summary>
             Весовые коэффициенты
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.GetProbability(System.Double[],AI.ML.Classifire.SModel)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.GetProbability(System.Double[],AI.ML.Classifiers.SModel)">
             <summary>
             Вероятности принадлежности к классу
             </summary>
             <param name="vect"></param>
             <param name="sm"></param>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.Save(System.String)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.Save(System.String)">
             <summary>
             Сохранение классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.Open(System.String)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.Open(System.String)">
             <summary>
             Загрузка классификатора
             </summary>
             <param name="path">Путь</param>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.AddClass(AI.Vector[],System.Int32)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.AddClass(AI.Vector[],System.Int32)">
             <summary>
             Добавление класса\модели
             </summary>
         </member>
-        <member name="M:AI.ML.Classifire.SimpleFLClassifier.Recognize(AI.Vector)">
+        <member name="M:AI.ML.Classifiers.SimpleFLClassifier.Recognize(AI.Vector)">
             <summary>
             Распознавание вектора
             </summary>
@@ -4505,6 +4463,13 @@
             Стемер русского языка
             </summary>
         </member>
+        <member name="M:AI.NLP.Stemmers.StemmerRus.TransformingWord(System.String)">
+            <summary>
+            стемминг
+            </summary>
+            <param name="word">слово</param>
+            <returns>приставка+корень</returns>
+        </member>
         <member name="T:AI.NLP.TextAnalise">
             <summary>
             Анализ текста(Семантика)
@@ -6056,11 +6021,88 @@
             Класс реализующий вектора и операции над ними
             </summary>
         </member>
+        <member name="P:AI.Vector.Current">
+            <summary>
+            Текущий элемент
+            </summary>
+        </member>
         <member name="M:AI.Vector.GetEnumerator">
             <summary>
             Enumerator
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:AI.Vector.MoveNext">
+            <summary>
+            Перевод указателя на следующий элемент
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AI.Vector.Count">
+            <summary>
+            Кол-во элементов, аналог N
+            </summary>
+        </member>
+        <member name="P:AI.Vector.IsReadOnly">
+            <summary>
+            Является коллекция только для чтения
+            </summary>
+        </member>
+        <member name="M:AI.Vector.IndexOf(System.Double)">
+            <summary>
+            Определяет индекс, аналог IndexValue
+            </summary>
+            <param name="item">Число типа double</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Vector.Insert(System.Int32,System.Double)">
+            <summary>
+            Добавление элемента после определенного индекса
+            </summary>
+            <param name="index">Индекс, куда вставить</param>
+            <param name="item">значение, что вставить</param>
+        </member>
+        <member name="M:AI.Vector.RemoveAt(System.Int32)">
+            <summary>
+            Удаление по индексу
+            </summary>
+            <param name="index">Индекс удаляемого элемента</param>
+        </member>
+        <member name="M:AI.Vector.Add(System.Double)">
+            <summary>
+            Добавление элемента
+            </summary>
+            <param name="item">Элемент</param>
+        </member>
+        <member name="M:AI.Vector.Clear">
+            <summary>
+            Очистка вектора
+            </summary>
+        </member>
+        <member name="M:AI.Vector.Contains(System.Double)">
+            <summary>
+            Проверяет, содержит ли вектор данный элемент
+            </summary>
+            <param name="item">Число double</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Vector.CopyTo(System.Double[],System.Int32)">
+            <summary>
+            Копирование данных начиная с  arrayIndex
+            </summary>
+            <param name="array">Массив</param>
+            <param name="arrayIndex">Начало копирование</param>
+        </member>
+        <member name="M:AI.Vector.Remove(System.Double)">
+            <summary>
+            Удаляет первое вхождение item
+            </summary>
+            <param name="item">Число double</param>
+        </member>
+        <member name="M:AI.Vector.Sort">
+            <summary>
+            Сортировка
+            </summary>
         </member>
         <member name="P:AI.Vector.DataInVector">
             <summary>
