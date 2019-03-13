@@ -4,7 +4,7 @@
 ## **Пространства имен:**
 * [AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
 * [Algebra](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Algebra) — На данный момент там только метод Крамера
-* [AlgorithmAnalysis](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AlgorAnalise) — Методы анализа алгоритмов, использую их в своей диссертации, вряд ли кому-нибудь пригодится.
+* [AlgorithmAnalysis](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AlgorithmAnalysis) — Методы анализа алгоритмов, использую их в своей диссертации, вряд ли кому-нибудь пригодится.
 * [Approximation](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Approximation) — Аппроксимация
 * [Charts](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Charts) — методы работы с графиками
 * [Combinatorics](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Combinatorics) — Комбинаторика
