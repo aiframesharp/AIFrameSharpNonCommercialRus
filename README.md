@@ -30,4 +30,10 @@
 * [Tensor](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Tensor) — Тензор 3-го ранга
 * [Var](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Var) — Аналог нетипизированной переменной 
 * [Vector](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.Vector) — Вектора List<double>
-* [WindowForFFT](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.WindowForFFT) — оконные функции для преобразования Фурье
+* [WindowForFFT](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.WindowForFFT) — оконные функции для преобразования Фурье   
+     
+  ---
+  ---
+  
+ * Об ошибках писать [сюда](https://vk.com/topic-64012508_39907407).
+ * Предложения/пожелания по коммерческой версии [сюда](https://vk.com/topic-64012508_39907414).
