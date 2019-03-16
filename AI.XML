@@ -17,29 +17,29 @@
             <param name="B">Вектор ответов</param>
             <returns>Вектор неизвестных</returns>
         </member>
-        <member name="T:AI.AlgorithmAnalysis.CorrelationAnalise">
+        <member name="T:AI.AlgorithmAnalysis.CorrelationAnalysis">
             <summary>
             Корреляционный анализ (проверка ортогональности)
             </summary>
         </member>
-        <member name="P:AI.AlgorithmAnalysis.CorrelationAnalise.CorMatrNorm">
+        <member name="P:AI.AlgorithmAnalysis.CorrelationAnalysis.CorMatrNorm">
             <summary>
             Нормированная корреляционная матрица
             </summary>
         </member>
-        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.#ctor(AI.Matrix)">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalysis.#ctor(AI.Matrix)">
             <summary>
             Корреляционный анализ
             </summary>
             <param name="matrix">Матрица перехода</param>
         </member>
-        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.MeanOrtog">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalysis.MeanOrtog">
             <summary>
             Средний коэффициент ортогональности
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalise.CorMatrDeterm">
+        <member name="M:AI.AlgorithmAnalysis.CorrelationAnalysis.CorMatrDeterm">
             <summary>
             Определитель корреляционной  матрицы (один из показателей мультиколлинеарности)
             </summary>
@@ -2032,12 +2032,6 @@
             </summary>
             <param name="windowSize">Размер окна</param>
         </member>
-        <member name="M:AI.WindowForFFT.KaiserWindow(System.Int32)">
-            <summary>
-            Окно Кайзера дает уровень боковых лепестков -90 db (Не реализован)
-            </summary>
-            <param name="windowSize">Размер окна</param>
-        </member>
         <member name="T:AI.FLV">
             <summary>
             Не четкая логическая переменная, Fuzzy Logic Variable(FLV)
@@ -2364,7 +2358,7 @@
         </member>
         <member name="M:AI.Matrix.Determinant">
             <summary>
-            Рассчет определителя матрицы
+            Расчет определителя матрицы
             </summary>
             <returns>Определитель</returns>
         </member>
@@ -2372,7 +2366,7 @@
             <summary>
             Возвращает вектор с нужного среза, нужный индекс
             </summary>
-            <param name="index">Индеск</param>
+            <param name="index">Индекс</param>
             <param name="dimension">Срез/размерность</param>
             <returns>Вектор</returns>
         </member>
@@ -2391,7 +2385,7 @@
         </member>
         <member name="M:AI.Matrix.CorrelationMatrixNorm(AI.Vector[])">
             <summary>
-            Метод создает матрицу с коэфициентами попарной корреляции векторов
+            Метод создает матрицу с коэффициентами попарной корреляции векторов
             </summary>
             <param name="vectors">Вектора</param>
             <returns>Корреляционная матрица</returns>
@@ -5900,7 +5894,7 @@
         </member>
         <member name="T:AI.Tensor">
             <summary>
-                Представляет тензор 3-го ранга, как базовый клас нейронной сети
+                Представляет тензор 3-го ранга
             </summary>
         </member>
         <member name="F:AI.Tensor.Depth">
@@ -6382,12 +6376,6 @@
             </summary>
             <param name="elements">Элементы</param>
         </member>
-        <member name="M:AI.Vector.PhaseUnwrap">
-            <summary>
-            Устранение разрыров фазы(метод не работает)
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:AI.Vector.ElementsDel(System.Double[])">
             <summary>
             Удаление выбранных элементов
@@ -6405,14 +6393,6 @@
             Сохраняет вектор как текстовый файл
             </summary>
             <param name="path">Путь до файла</param>
-        </member>
-        <member name="M:AI.Vector.InsertDataInTheBeginning(System.Double,AI.Vector)">
-            <summary>
-            Вставляет значение в начало
-            </summary>
-            <param name="data"></param>
-            <param name="vect"></param>
-            <returns></returns>
         </member>
         <member name="M:AI.Vector.GetInterval(System.Int32,System.Int32)">
             <summary>
@@ -6568,7 +6548,7 @@
             Минимальное значение
             </summary>
         </member>
-        <member name="M:AI.Vector.Extend">
+        <member name="M:AI.Vector.Expend">
             <summary>
             Мат. ожидание
             </summary>
