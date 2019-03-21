@@ -4,12 +4,25 @@
         <name>AI</name>
     </assembly>
     <members>
+        <member name="T:AI.Algebra.Gauss">
+            <summary>
+            Метод Гаусса (он эффективней Крамера)
+            </summary>
+        </member>
+        <member name="M:AI.Algebra.Gauss.SolvingEquations(AI.Matrix,AI.Vector)">
+            <summary>
+            Выдает ответ(решение СЛАУ) (не работает)
+            </summary>
+            <param name="A">Матрица коэффициентов</param>
+            <param name="B">Вектор ответов</param>
+            <returns></returns>
+        </member>
         <member name="T:AI.Algebra.Kramer">
             <summary>
             Description of Kramer.
             </summary>
         </member>
-        <member name="M:AI.Algebra.Kramer.GetAnswer(AI.Matrix,AI.Vector)">
+        <member name="M:AI.Algebra.Kramer.SolvingEquations(AI.Matrix,AI.Vector)">
             <summary>
             Вывод вектора решений системы уравнений
             </summary>
@@ -44,6 +57,35 @@
             Определитель корреляционной  матрицы (один из показателей мультиколлинеарности)
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:AI.AlgorithmAnalysis.Metrics">
+            <summary>
+            Метрики качества
+            </summary>
+        </member>
+        <member name="M:AI.AlgorithmAnalysis.Metrics.Pressicion(AI.ML.Classifiers.IClassifier,AI.ML.Datasets.VectorIntDataset,System.Int32)">
+            <summary>
+            Точности по классам
+            </summary>
+            <param name="classifier">Классификатор</param>
+            <param name="vectorClasses">Датасет</param>
+            <param name="classes">число классов</param>
+        </member>
+        <member name="M:AI.AlgorithmAnalysis.Metrics.PressicionMean(AI.ML.Classifiers.IClassifier,AI.ML.Datasets.VectorIntDataset,System.Int32)">
+            <summary>
+            Средняя точность
+            </summary>
+            <param name="classifier">Классификатор</param>
+            <param name="vectorClasses">Датасет</param>
+            <param name="classes">число классов</param>
+        </member>
+        <member name="M:AI.AlgorithmAnalysis.Metrics.PressicionMatrix(AI.ML.Classifiers.IClassifier,AI.ML.Datasets.VectorIntDataset,System.Int32)">
+            <summary>
+            Матрица точностей(перепутывания)
+            </summary>
+            <param name="classifier">Классификатор</param>
+            <param name="vectorClasses">Датасет</param>
+            <param name="classes">число классов</param>
         </member>
         <member name="T:AI.AlgorithmAnalysis.SimilarityOfBases">
             <summary>
@@ -2154,14 +2196,14 @@
             Массив значений в матрице
             </summary>
         </member>
-        <member name="P:AI.Matrix.M">
+        <member name="P:AI.Matrix.H">
             <summary>
-            Количество строк
+            Высота
             </summary>
         </member>
-        <member name="P:AI.Matrix.N">
+        <member name="P:AI.Matrix.W">
             <summary>
-            Количество столбцов
+            Ширина
             </summary>
         </member>
         <member name="P:AI.Matrix.Item(System.Int32,System.Int32)">
@@ -2361,6 +2403,12 @@
             Расчет определителя матрицы
             </summary>
             <returns>Определитель</returns>
+        </member>
+        <member name="M:AI.Matrix.ToTriangularMatr">
+            <summary>
+            Переводит произвольную матрицу в треугольную
+            </summary>
+            <returns>Диагональная матрица</returns>
         </member>
         <member name="M:AI.Matrix.GetVector(System.Int32,System.Int32)">
             <summary>
