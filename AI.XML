@@ -320,6 +320,11 @@
             График от одной переменной
             </summary>
         </member>
+        <member name="M:AI.Charts.GraphicsView.PlotD(AI.Vector,AI.Vector,System.Boolean)">
+            <summary>
+            График от одной переменной
+            </summary>
+        </member>
         <member name="M:AI.Charts.GraphicsView.Plot(AI.Vector,AI.Vector,System.String,System.String,System.Drawing.Color)">
             <summary>
             График от одной переменной
@@ -448,7 +453,7 @@
             Инициализация формы
             </summary>
         </member>
-        <member name="M:AI.Charts.VisualPlot.#ctor(AI.Vector,AI.Vector)">
+        <member name="M:AI.Charts.VisualPlot.#ctor(AI.Vector,AI.Vector,System.Boolean)">
             <summary>
             Инициализация формы
             </summary>
@@ -1759,6 +1764,33 @@
         <member name="M:AI.AdditionalFunctions.GeomFunc.VectorRotate(AI.Vector,System.Double,System.Int32,System.Int32)">
             <summary>
             Поворот вектора на заданные углы
+            </summary>
+        </member>
+        <member name="T:AI.Calculator">
+            <summary>
+            Калькулятор
+            </summary>
+        </member>
+        <member name="M:AI.Calculator.#ctor">
+            <summary>
+            Калькулятор
+            </summary>
+        </member>
+        <member name="M:AI.Calculator.Calculate(System.String)">
+            <summary>
+            Вычисление строки
+            </summary>
+            <param name="strExpression">Выражение</param>
+            <returns>Ответ</returns>
+        </member>
+        <member name="T:AI.ExtensionMath">
+            <summary>
+            Методы расширения
+            </summary>
+        </member>
+        <member name="T:AI.OperationMath">
+            <summary>
+            Математические операции
             </summary>
         </member>
         <member name="T:AI.Functions">
@@ -4580,6 +4612,71 @@
             <param name="str">ненормализованное предложение</param>
             <returns>нормализованное</returns>
         </member>
+        <member name="T:AI.NLP.TextSummarization">
+            <summary>
+            Суммаризация
+            </summary>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.#ctor">
+            <summary>
+            Суммаризация
+            </summary>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.Summarization(System.String,System.Int32)">
+            <summary>
+            Суммаризация текста
+            </summary>
+            <param name="text">Текст</param>
+            <param name="num">Кол-во предложений для описания текста</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.GetSeqs(System.String)">
+            <summary>
+            Выдает предложения
+            </summary>
+            <param name="text">Текст</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.Step1(System.String)">
+            <summary>
+            Первый шаг алгоритма(составление вероятностных словарей)
+            </summary>
+            <param name="text">Текст</param>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.Step2">
+            <summary>
+            Второй шаг составления списка: предложение, вес
+            </summary>
+        </member>
+        <member name="M:AI.NLP.TextSummarization.GetW(System.Int32)">
+            <summary>
+            Расчет смыслового веса предложения
+            </summary>
+            <param name="ind"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI.NLP.DataSummText">
+            <summary>
+            Данные предложений
+            </summary>
+        </member>
+        <member name="P:AI.NLP.DataSummText.W">
+            <summary>
+            Вес
+            </summary>
+        </member>
+        <member name="P:AI.NLP.DataSummText.Str">
+            <summary>
+            Содержание
+            </summary>
+        </member>
+        <member name="M:AI.NLP.DataSummText.#ctor(System.String,System.Double)">
+            <summary>
+            Данные предложений
+            </summary>
+            <param name="str">строка</param>
+            <param name="w">вес</param>
+        </member>
         <member name="T:AI.NLP.WordToSemantic">
             <summary>
             Перевод слова в семантический вектор
@@ -5763,6 +5860,44 @@
             <param name="m">Количество строк</param>
             <param name="n">Количество столбцов</param>
         </member>
+        <member name="M:AI.Statistics.Statistic.rand(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Тензор
+            </summary>
+            <param name="h"></param>
+            <param name="w"></param>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Statistics.Statistic.rand(System.Int32,System.Int32,System.Int32,System.Random)">
+            <summary>
+            Тензор
+            </summary>
+            <param name="h"></param>
+            <param name="w"></param>
+            <param name="d"></param>
+            <param name="random"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Тензор
+            </summary>
+            <param name="h"></param>
+            <param name="w"></param>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Statistics.Statistic.randNorm(System.Int32,System.Int32,System.Int32,System.Random)">
+            <summary>
+            Тензор
+            </summary>
+            <param name="h"></param>
+            <param name="w"></param>
+            <param name="d"></param>
+            <param name="random"></param>
+            <returns></returns>
+        </member>
         <member name="M:AI.Statistics.Statistic.MaximalValue(AI.Vector)">
             <summary>
             Максимальное значение вектора
@@ -5945,12 +6080,12 @@
                 Представляет тензор 3-го ранга
             </summary>
         </member>
-        <member name="F:AI.Tensor.Depth">
+        <member name="F:AI.Tensor.D">
             <summary>
             Глубина
             </summary>
         </member>
-        <member name="F:AI.Tensor.Height">
+        <member name="F:AI.Tensor.H">
             <summary>
             Высота
             </summary>
@@ -5960,33 +6095,39 @@
             Значения
             </summary>
         </member>
-        <member name="F:AI.Tensor.Width">
+        <member name="F:AI.Tensor.W">
             <summary>
             Ширина
             </summary>
         </member>
+        <member name="P:AI.Tensor.Item(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Доступ по индексу
+            </summary>
+            <param name="i">высота</param>
+            <param name="j">ширина</param>
+            <param name="k">глубина</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI.Tensor.#ctor(System.Double[0:,0:,0:])">
+            <summary>
+            Инициализация массивом
+            </summary>
+            <param name="data">Значения</param>
+        </member>
         <member name="M:AI.Tensor.#ctor(System.Int32,System.Int32,System.Int32)">
             <summary>
-                Заполнение тензора случайными числами
+            Создание нулевого тензора
             </summary>
-            <param name="width">ширина</param>
-            <param name="height">высота</param>
-            <param name="depth">глубина</param>
+            <param name="h">высота</param>
+            <param name="w">ширина</param>
+            <param name="d">глубина</param>
         </member>
-        <member name="M:AI.Tensor.#ctor(System.Int32,System.Int32,System.Int32,System.Double)">
-            <summary>
-            Тензор 3-го ранга
-            </summary>
-            <param name="width">Ширина</param>
-            <param name="height">Высота</param>
-            <param name="depth">Глубина</param>
-            <param name="c">Величина которой инициализируется тензор</param>
-        </member>
-        <member name="M:AI.Tensor.#ctor(System.Collections.Generic.IList{System.Double})">
+        <member name="M:AI.Tensor.#ctor(System.Double[])">
             <summary>
             Инициализация с помощь интерфейса IList
             </summary>
-            <param name="weights">Значения</param>
+            <param name="data">Значения</param>
         </member>
         <member name="M:AI.Tensor.Copy">
             <summary>
@@ -6027,21 +6168,6 @@
             Деление
             </summary>
         </member>
-        <member name="M:AI.Tensor.Get(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Выдает значение с заданной позиции
-            </summary>
-        </member>
-        <member name="M:AI.Tensor.Set(System.Int32,System.Int32,System.Int32,System.Double)">
-            <summary>
-            Устанавливает значение на заданную позицию
-            </summary>
-        </member>
-        <member name="M:AI.Tensor.Normalise">
-            <summary>
-            Нормализация
-            </summary>
-        </member>
         <member name="M:AI.Tensor.ToVector">
             <summary>
             Преобразование в вектор
@@ -6052,11 +6178,11 @@
             Вычитание
             </summary>
         </member>
-        <member name="M:AI.Tensor.SetConst(System.Double)">
+        <member name="M:AI.Tensor.TransformTensor(System.Func{System.Double,System.Double})">
             <summary>
-            Установка константы
+            Поэлементное трансформирование тензора
             </summary>
-            <param name="c">Константа</param>
+            <param name="transform">Функция для трансформирования</param>
         </member>
         <member name="T:AI.Vector">
             <summary>
@@ -6473,6 +6599,11 @@
             <returns></returns>
         </member>
         <member name="M:AI.Vector.VisualD">
+            <summary>
+            Визуализация вектора
+            </summary>
+        </member>
+        <member name="M:AI.Vector.VisualD(AI.Vector,System.Boolean)">
             <summary>
             Визуализация вектора
             </summary>
