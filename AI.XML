@@ -4923,7 +4923,7 @@
             <param name="param">параметры</param>
             <param name="afh">Тип АЧХ</param>
         </member>
-        <member name="M:AI.Signals.Filters.CreationComplexAFH(AI.Vector,System.String[])">
+        <member name="M:AI.Signals.Filters.CreatAFH(AI.Vector,System.String[])">
             <summary>
             Создание составной АЧХ
             </summary>
