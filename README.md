@@ -1,5 +1,5 @@
 # AIFrameSharpNonCommercialRus
-Некоммерческая версия фреймворка для быстрой и легкой разработки систем искусственного интеллекта.
+Облегченная версия фреймворка для быстрой разработки систем искусственного интеллекта.
 
 ## **Пространства имен:**
 * [AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
