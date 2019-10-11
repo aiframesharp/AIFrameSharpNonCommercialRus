@@ -6,12 +6,12 @@
     <members>
         <member name="T:AI.Algebra.Gauss">
             <summary>
-            Метод Гаусса (он эффективней Крамера)
+            Метод Гаусса имеет вычислительную сложность O(n^3)
             </summary>
         </member>
         <member name="M:AI.Algebra.Gauss.SolvingEquations(AI.Matrix,AI.Vector)">
             <summary>
-            Выдает ответ(решение СЛАУ) (не работает)
+            Выдает ответ(решение СЛАУ)
             </summary>
             <param name="A">Матрица коэффициентов</param>
             <param name="B">Вектор ответов</param>
@@ -1273,11 +1273,11 @@
             и обратно
             </summary>
         </member>
-        <member name="M:AI.ComputerVision.ImgConverter.LoadBitmap(System.String)">
+        <member name="M:AI.ComputerVision.ImgConverter.GetBitmap(System.String)">
             <summary>
             Загрузка картинки
             </summary>
-            <param name="fileName">Имя</param>
+            <param name="path">Имя</param>
             <returns>изображение</returns>
         </member>
         <member name="M:AI.ComputerVision.ImgConverter.ImgToByteArray(System.Drawing.Bitmap)">
@@ -3152,6 +3152,13 @@
             <summary>
             Классификатор (Метод ближайшего соседа)
             </summary>
+        </member>
+        <member name="M:AI.ML.Classifiers.kNNCl.GetKNN(System.String)">
+            <summary>
+            Загрузка из csv файла (признаки;метка_класса)
+            </summary>
+            <param name="pathToEtallonClassCsv">Путь до файла</param>
+            <returns></returns>
         </member>
         <member name="M:AI.ML.Classifiers.kNNCl.RbfK(System.Double)">
             <summary>
