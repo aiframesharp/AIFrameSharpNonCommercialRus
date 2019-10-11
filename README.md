@@ -1,9 +1,9 @@
 # AIFrameSharpNonCommercialRus
 Облегченная версия фреймворка для быстрой разработки систем искусственного интеллекта.
 
-* Скомпилированная версия + обертка под Dlib(x64 .Net Framework 4.6.1) тут: https://github.com/aiframesharp/AIFrameSharpNonCommercialRus
-* Исходный код: https://github.com/zaharPonimash/AI.MathMod-2.0
-* Страница проекта в NuGet: https://www.nuget.org/packages/AI
+* [Скомпилированная версия + обертка под Dlib(x64 .Net Framework 4.6.1)](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus)
+* [Исходный код](https://github.com/zaharPonimash/AI.MathMod-2.0)
+* [Страница проекта в NuGet](https://www.nuget.org/packages/AI)
 
 ## **Пространства имен:**
 * [AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
