@@ -2,7 +2,7 @@
 Облегченная версия фреймворка для быстрой разработки систем искусственного интеллекта.
 
 * [Скомпилированная версия + обертка под Dlib(x64 .Net Framework 4.6.1)](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus)
-* [Страница проекта в NuGet](https://www.nuget.org/packages/AI)
+
 
 ## **Пространства имен:**
 * [AdditionalFunctions](https://github.com/aiframesharp/AIFrameSharpNonCommercialRus/wiki/AI.AdditionalFunctions) — Дополнительные функции, которые выполняются поэлементно
